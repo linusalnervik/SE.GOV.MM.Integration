@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net48;net47</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>   
+    <PackageId>SE.GOV.MM.Integration.Infrastructure</PackageId>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/linusalnervik/SE.GOV.MM.Integration/master/mm_logo_org_rgb.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/linusalnervik/SE.GOV.MM.Integration</RepositoryUrl>
+    <Copyright>https://www.minameddelanden.se/</Copyright>
+    <PackageLicenseFile>Licensing.txt</PackageLicenseFile>
+    <Authors>MinaMeddelanden</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\SE.GOV.MM.Integration.Core\Licensing.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Enums.NET" Version="3.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.4" />
+    <PackageReference Include="SE.GOV.MM.Integration.Core" Version="1.0.0" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="4.7.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>

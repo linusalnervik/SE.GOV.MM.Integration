@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net48;net47</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>SE.GOV.MM.Integration.Core</PackageId>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl>https://www.minameddelanden.se/</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/linusalnervik/SE.GOV.MM.Integration/master/mm_logo_org_rgb.png</PackageIconUrl>
+    <Copyright>MIT License</Copyright>
+    <PackageTags>Mina Meddelanden</PackageTags>
+    <RepositoryUrl>https://github.com/linusalnervik/SE.GOV.MM.Integration</RepositoryUrl>
+    <Description>Unofficial class to help setup postal service for Mina Meddelanden (MM).
+Core project.</Description>
+    <PackageLicenseFile>Licensing.txt</PackageLicenseFile>
+    <Authors>MinaMeddelanden</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\SE.GOV.MM.Integration.Infrastructure\Licensing.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
