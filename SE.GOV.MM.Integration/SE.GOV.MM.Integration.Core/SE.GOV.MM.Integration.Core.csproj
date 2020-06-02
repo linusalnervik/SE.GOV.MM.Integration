@@ -4,9 +4,9 @@
     <TargetFrameworks>netcoreapp3.1;net48;net47</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SE.GOV.MM.Integration.Core</PackageId>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
-    <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.5.0</AssemblyVersion>
+    <FileVersion>1.0.5.0</FileVersion>
+    <Version>1.0.5</Version>
     <PackageProjectUrl>https://www.minameddelanden.se/</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/linusalnervik/SE.GOV.MM.Integration/master/SE.GOV.MM.Integration/mm_logo_org_rgb.png</PackageIconUrl>
     <Copyright>MIT License</Copyright>

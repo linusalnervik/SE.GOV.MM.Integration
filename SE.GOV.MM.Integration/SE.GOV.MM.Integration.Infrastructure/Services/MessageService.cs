@@ -17,7 +17,7 @@ using static SE.GOV.MM.Integration.Core.Model.Enums;
 
 namespace SE.GOV.MM.Integration.Infrastructure.Services
 {
-    public class MessageService 
+    public class MessageService : IMessageService
     {
         private readonly ILogger logger;
 
@@ -39,7 +39,7 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
         /// <param name="certificateUrl">Path to certificate</param>
         /// <param name="certificatePassword">Password to certificate</param>
         /// <returns>Result of sending message</returns>
-        public async Task<DeliveryResult> distributeSecure(SignedDelivery SignedDelivery, string  endpointAdressRecipient,string endpointAdressAuthority, string certificateUrl, string certificatePassword)
+        public async Task<DeliveryResult> distributeSecure(SignedDelivery SignedDelivery, string endpointAdressRecipient, string endpointAdressAuthority, string certificateUrl, string certificatePassword)
         {
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: entering distributeSecure"));
             try
@@ -311,7 +311,7 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: leaving handleDistributeSecure"));
             return await messageHandler.SendMessageToMailBoxOperator(SealedDelivery, x509Certificate, baseAdressServiceSupplier);
         }
-         
+
 
         private static SealedDelivery CreateSealadDelivery()
         {

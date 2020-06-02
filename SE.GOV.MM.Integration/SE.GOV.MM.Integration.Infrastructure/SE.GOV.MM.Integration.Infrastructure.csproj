@@ -4,16 +4,16 @@
     <TargetFrameworks>netcoreapp3.1;net48;net47</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>   
     <PackageId>SE.GOV.MM.Integration.Infrastructure</PackageId>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
-    <Version>1.0.3</Version>
+    <AssemblyVersion>1.0.5.0</AssemblyVersion>
+    <FileVersion>1.0.5.0</FileVersion>
+    <Version>1.0.5</Version>
     <PackageProjectUrl>https://www.minameddelanden.se/</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/linusalnervik/SE.GOV.MM.Integration/master/SE.GOV.MM.Integration/mm_logo_org_rgb.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/linusalnervik/SE.GOV.MM.Integration</RepositoryUrl>
     <Copyright>MIT License</Copyright>
     <PackageLicenseFile>Licensing.txt</PackageLicenseFile>
 	<PackageTags>Mina Meddelanden, MM, Relay Service</PackageTags>
-	<PackageReleaseNotes>This it the first complete commit with all necessary implementations.</PackageReleaseNotes>
+	<PackageReleaseNotes>Added missing interface on MessageService</PackageReleaseNotes>
     <Authors>MinaMeddelanden</Authors>
 	 <Description>Unofficial project to help create a relay service for Mina Meddelanden (MM).
 This project contains the infrastructure implementation.</Description>
@@ -29,7 +29,7 @@ This project contains the infrastructure implementation.</Description>
   <ItemGroup>
     <PackageReference Include="Enums.NET" Version="3.0.3" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.4" />
-    <PackageReference Include="SE.GOV.MM.Integration.Core" Version="1.0.4" />
+    <PackageReference Include="SE.GOV.MM.Integration.Core" Version="1.0.5" />
     <PackageReference Include="System.Security.Cryptography.Xml" Version="4.7.0" />
     <PackageReference Include="System.ServiceModel.Duplex" Version="4.4.*" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
