@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SE.GOV.MM.Integration.Core.Interface;
+using SE.GOV.MM.Integration.Core.Model;
+using Service;
 using System;
 using System.IO;
 using System.Text;
@@ -18,9 +20,9 @@ namespace SE.GOV.MM.Integration.Infrastructure
         }
 
         /// <summary>
-        /// Serialize a SignedDelivery2 object to a XmlDocument. using defaultnamespaceV3.
+        /// Serialize a SignedDelivery object to a XmlDocument. using defaultnamespaceV3.
         /// </summary>
-       internal XmlDocument SerializeToXmlDocumentV3(SignedDelivery2 signedDelivery, string defaultNameSpace)
+       internal XmlDocument SerializeToXmlDocumentV3(SignedDelivery signedDelivery, string defaultNameSpace)
         {
             _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelperV3: incoming SerializeToXmlDocumentV3"));
 
@@ -38,8 +40,8 @@ namespace SE.GOV.MM.Integration.Infrastructure
 
                 using (var xmlWriter = XmlWriter.Create(memoryStream, xmlWriterSettings))
                 {
-                    var xmlSerializer = new XmlSerializer(typeof(SignedDelivery2), defaultNameSpace);
-                    xmlSerializer.Serialize(xmlWriter,(SignedDelivery2) signedDelivery, xmlSerializerNameSpace);
+                    var xmlSerializer = new XmlSerializer(typeof(SignedDelivery), defaultNameSpace);
+                    xmlSerializer.Serialize(xmlWriter,(SignedDelivery) signedDelivery, xmlSerializerNameSpace);
                 }
 
                 memoryStream.Position = 0;
@@ -51,9 +53,9 @@ namespace SE.GOV.MM.Integration.Infrastructure
         }
 
         /// <summary>
-        /// Serialize a SealedDelivery2 object to a XmlDocument. using defaultnamespaceV2, that is a property from config file, add this to xmlserializer.
+        /// Serialize a SealedDelivery object to a XmlDocument. using defaultnamespaceV2, that is a property from config file, add this to xmlserializer.
         /// </summary>
-        internal XmlDocument SerializeToXmlDocumentV3(SealedDelivery2 sealedDelivery, string defaultNameSpaceV3)
+        internal XmlDocument SerializeToXmlDocumentV3(SealedDelivery sealedDelivery, string defaultNameSpaceV3)
         {
             _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: incoming SerializeToXmlDocumentV3"));
 
@@ -71,7 +73,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
 
                 using (var xmlWriter = XmlWriter.Create(memoryStream, xmlWriterSettings))
                 {
-                    var xmlSerializer = new XmlSerializer(typeof(SealedDelivery2), defaultNameSpaceV3);
+                    var xmlSerializer = new XmlSerializer(typeof(SealedDelivery), defaultNameSpaceV3);
                     xmlSerializer.Serialize(xmlWriter,sealedDelivery, xmlSerializerNameSpace);
                 }
 
@@ -84,17 +86,17 @@ namespace SE.GOV.MM.Integration.Infrastructure
         }
 
         /// <summary>
-        /// Read the xmldocument and deserialize it to a SignedDelivery2 object. Important to use the default namespace for version 2.
+        /// Read the xmldocument and deserialize it to a SignedDelivery object. Important to use the default namespace for version 2.
         /// </summary>
-        public SignedDelivery2 DeserializeXmlToSignedDeliveryV3(XmlDocument xmlDocument, string defaultNameSpaceV3)
+        public SignedDelivery DeserializeXmlToSignedDeliveryV3(XmlDocument xmlDocument, string defaultNameSpaceV3)
         {
             _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: incoming DeserializeXmlToSignedDeliveryV3"));
 
-            SignedDelivery2 signedDelivery;
+            SignedDelivery signedDelivery;
             using (var memoryStream = new MemoryStream(UTF8Encoding.UTF8.GetBytes(xmlDocument.OuterXml)))
             {
-                var xmlSerializer = new XmlSerializer(typeof(SignedDelivery2), defaultNameSpaceV3);
-                signedDelivery = (SignedDelivery2)xmlSerializer.Deserialize(memoryStream);
+                var xmlSerializer = new XmlSerializer(typeof(SignedDelivery), defaultNameSpaceV3);
+                signedDelivery = (SignedDelivery)xmlSerializer.Deserialize(memoryStream);
 
             };
 
@@ -114,17 +116,17 @@ namespace SE.GOV.MM.Integration.Infrastructure
         }
 
         /// <summary>
-        /// Read the xmldocument and deserialize it to a SealedDelivery2 object. Important to use the default namespace.
+        /// Read the xmldocument and deserialize it to a SealedDelivery object. Important to use the default namespace.
         /// </summary>
-        public SealedDelivery2 DeserializeXmlToSealedDeliveryV3(XmlDocument xmlDocument, string defaultNameSpaceV3)
+        public SealedDelivery DeserializeXmlToSealedDeliveryV3(XmlDocument xmlDocument, string defaultNameSpaceV3)
         {
             _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: incoming DeserializeXmlToSealedDeliveryV3"));
 
-            SealedDelivery2 sealedDelivery;
+            SealedDelivery sealedDelivery;
             using (var memoryStream = new MemoryStream(UTF8Encoding.UTF8.GetBytes(xmlDocument.OuterXml)))
             {
-                var xmlSerializer = new XmlSerializer(typeof(SealedDelivery2), defaultNameSpaceV3);
-                sealedDelivery = (SealedDelivery2)xmlSerializer.Deserialize(memoryStream);
+                var xmlSerializer = new XmlSerializer(typeof(SealedDelivery), defaultNameSpaceV3);
+                sealedDelivery = (SealedDelivery)xmlSerializer.Deserialize(memoryStream);
 
             };
 

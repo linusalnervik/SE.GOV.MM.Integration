@@ -4,19 +4,24 @@
     <TargetFrameworks>netcoreapp3.1;net48;net47</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SE.GOV.MM.Integration.Core</PackageId>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
+    <Version>1.0.4</Version>
     <PackageProjectUrl>https://www.minameddelanden.se/</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/linusalnervik/SE.GOV.MM.Integration/master/mm_logo_org_rgb.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/linusalnervik/SE.GOV.MM.Integration/master/SE.GOV.MM.Integration/mm_logo_org_rgb.png</PackageIconUrl>
     <Copyright>MIT License</Copyright>
-    <PackageTags>Mina Meddelanden</PackageTags>
+    <PackageTags>Mina Meddelanden, MM, Relay Service</PackageTags>
     <RepositoryUrl>https://github.com/linusalnervik/SE.GOV.MM.Integration</RepositoryUrl>
-    <Description>Unofficial class to help setup postal service for Mina Meddelanden (MM).
-Core project.</Description>
+    <Description>Unofficial project to help create a relay service for Mina Meddelanden (MM).
+This project contains the core implementation.</Description>
     <PackageLicenseFile>Licensing.txt</PackageLicenseFile>
     <Authors>MinaMeddelanden</Authors>
+    <PackageReleaseNotes>This it the first complete commit with all necessary implementations.</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Model\ServiceProxy.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.ServiceModel.Primitives" Version="4.7.0" />

@@ -14,22 +14,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using static SE.GOV.MM.Integration.Core.Model.Enums;
+using SE.GOV.MM.Integration.Core.Model;
+using Service;
 
 namespace SE.GOV.MM.Integration.NUnit.Infrastructure
 {
     [TestFixture]
     public class SerializeHelperTest
     {
-        public SignedDelivery2 signedDelivery2 { get; set; }
-        public SealedDelivery2 sealedDelivery2 { get; set; }
+        public SignedDelivery SignedDelivery { get; set; }
+        public SealedDelivery SealedDelivery { get; set; }
         public SerializeHelper serializeHelper { get; set; }
        
 
         [SetUp]
         public void Setup()
         {
-            signedDelivery2 = SetupSignedDelivery2();
-            sealedDelivery2 = SetupSealedDelivery2();
+            SignedDelivery = SetupSignedDelivery();
+            SealedDelivery = SetupSealedDelivery();
             var logger= SetupLogging();
             serializeHelper = new SerializeHelper(logger);
         }
@@ -69,20 +71,20 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
 
         #region Setup
 
-        private static SignedDelivery2 SetupSignedDelivery2()
+        private static SignedDelivery SetupSignedDelivery()
         {
-          return new SignedDelivery2()
+          return new SignedDelivery()
             {
-                Delivery = new SecureDelivery2()
+                Delivery = new SecureDelivery()
                 {
                     Header = new SecureDeliveryHeader() { Sender = new Sender() { Id = "162021004748", Name = "Kommun A" }, Recipient = "198101052382" },
-                    Message = new SecureMessage1[] { new SecureMessage1()
+                    Message = new SecureMessage[] { new SecureMessage()
                     {
-                        Header= new MessageHeader1()
+                        Header= new MessageHeader()
                         {
                             Id="198101052382",
                             Subject="Säkert Meddelande - deliverSecure v3_03.1 - Ett meddelande - en mottagare - privat - bilaga PDF",
-                            Supportinfo=new SupportInfo1(){Text="suppinfo" },
+                            Supportinfo=new SupportInfo(){Text="suppinfo" },
                             OfficialMatter= new OfficialMatter()
                             {
                                 Item= new OfficialMatterExtension()
@@ -124,9 +126,9 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
                 }
             };
         }
-        private static SealedDelivery2 SetupSealedDelivery2()
+        private static SealedDelivery SetupSealedDelivery()
         {
-            return new SealedDelivery2()
+            return new SealedDelivery()
             {
                 Seal = new Seal()
                 {

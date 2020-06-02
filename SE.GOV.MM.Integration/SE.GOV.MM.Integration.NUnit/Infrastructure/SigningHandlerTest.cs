@@ -31,14 +31,14 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
 
     
         [Test]
-        public void IsValidSignature_SignedDelivery()
+        public async Task IsValidSignature_SignedDelivery()
         {
             //Arrange
             var xmlDocument = new XmlDocument();
             xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDeliveryWithSignature.xml");
 
             //Act
-            var isValid = messageService.IsValidSignature(xmlDocument);
+            var isValid = await messageService.IsValidSignature(xmlDocument);
 
             //Assert
             Assert.IsTrue(isValid);

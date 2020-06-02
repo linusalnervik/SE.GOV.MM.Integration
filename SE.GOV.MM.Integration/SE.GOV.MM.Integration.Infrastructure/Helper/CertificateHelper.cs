@@ -59,8 +59,8 @@ namespace SE.GOV.MM.Integration.Infrastructure
         /// <summary>
         /// Get the certificate used to sign xml document from url.
         /// </summary>
-        /// <param name="url"></param>
-        /// <param name="password"></param>
+        /// <param name="url">Path to certificate</param>
+        /// <param name="password">Password to certificate</param>
         /// <returns></returns>
         public X509Certificate2 GetXMLSigningCertificateFromUrl(string url, string password)
         {

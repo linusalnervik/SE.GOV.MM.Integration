@@ -11,4041 +11,4040 @@
 [assembly: System.Runtime.Serialization.ContractNamespaceAttribute("http://minameddelanden.gov.se/schema/Common", ClrNamespace = "minameddelanden.gov.se.schema.Common")]
 [assembly: System.Runtime.Serialization.ContractNamespaceAttribute("http://minameddelanden.gov.se/schema/Common/v3", ClrNamespace = "minameddelanden.gov.se.schema.Common.v3")]
 
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
-public partial class NotificationDelivery
-{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
+    public partial class NotificationDelivery
+    {
 
-    private DeliveryHeader headerField;
+        private DeliveryHeader headerField;
 
-    private NotificationMessage messageField;
+        private NotificationMessage messageField;
 
-    private EmailMessage emailMessageField;
+        private EmailMessage emailMessageField;
 
-    private SmsMessage smsMessageField;
+        private SmsMessage smsMessageField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public DeliveryHeader Header
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public DeliveryHeader Header
         {
-            return this.headerField;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public NotificationMessage Message
         {
-            this.headerField = value;
+            get
+            {
+                return this.messageField;
+            }
+            set
+            {
+                this.messageField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public NotificationMessage Message
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public EmailMessage EmailMessage
         {
-            return this.messageField;
+            get
+            {
+                return this.emailMessageField;
+            }
+            set
+            {
+                this.emailMessageField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        public SmsMessage SmsMessage
         {
-            this.messageField = value;
+            get
+            {
+                return this.smsMessageField;
+            }
+            set
+            {
+                this.smsMessageField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public EmailMessage EmailMessage
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class DeliveryHeader
     {
-        get
+
+        private Sender senderField;
+
+        private string[] recipientField;
+
+        private string referenceField;
+
+        private string correlationIdField;
+
+        private string attentionField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public Sender Sender
         {
-            return this.emailMessageField;
-        }
-        set
+            get
+            {
+                return this.senderField;
+            }
+            set
+            {
+                this.senderField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Recipient", Order = 1)]
+        public string[] Recipient
+        {
+            get
+            {
+                return this.recipientField;
+            }
+            set
+            {
+                this.recipientField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public string Reference
         {
-            this.emailMessageField = value;
+            get
+            {
+                return this.referenceField;
+            }
+            set
+            {
+                this.referenceField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public SmsMessage SmsMessage
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        public string CorrelationId
         {
-            return this.smsMessageField;
+            get
+            {
+                return this.correlationIdField;
+            }
+            set
+            {
+                this.correlationIdField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
+        public string Attention
         {
-            this.smsMessageField = value;
+            get
+            {
+                return this.attentionField;
+            }
+            set
+            {
+                this.attentionField = value;
+            }
         }
     }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class DeliveryHeader
-{
 
-    private Sender senderField;
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Sender")]
+    public class Sender
+    {
 
-    private string[] recipientField;
+        private string idField;
 
-    private string referenceField;
+        private string nameField;
 
-    private string correlationIdField;
+        private string attentionField;
 
-    private string attentionField;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public Sender Sender
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public string Name
         {
-            return this.senderField;
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public string Attention
         {
-            this.senderField = value;
+            get
+            {
+                return this.attentionField;
+            }
+            set
+            {
+                this.attentionField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Recipient", Order = 1)]
-    public string[] Recipient
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "ForwardDelivery", Namespace = "http://minameddelanden.gov.se/schema/Service/v3")]
+    public partial class ForwardDelivery1
     {
-        get
+
+        private DeliveryHeader headerField;
+
+        private ForwardMessage messageField;
+
+        private SealedDelivery orginalDeliveryField;
+
+        private string messageIdToForwardField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public DeliveryHeader Header
         {
-            return this.recipientField;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public ForwardMessage Message
         {
-            this.recipientField = value;
+            get
+            {
+                return this.messageField;
+            }
+            set
+            {
+                this.messageField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public string Reference
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public SealedDelivery OrginalDelivery
         {
-            return this.referenceField;
+            get
+            {
+                return this.orginalDeliveryField;
+            }
+            set
+            {
+                this.orginalDeliveryField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        public string MessageIdToForward
         {
-            this.referenceField = value;
+            get
+            {
+                return this.messageIdToForwardField;
+            }
+            set
+            {
+                this.messageIdToForwardField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public string CorrelationId
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class ForwardMessage
     {
-        get
+
+        private string subjectField;
+
+        private MessageBody bodyField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string Subject
         {
-            return this.correlationIdField;
+            get
+            {
+                return this.subjectField;
+            }
+            set
+            {
+                this.subjectField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public MessageBody Body
         {
-            this.correlationIdField = value;
+            get
+            {
+                return this.bodyField;
+            }
+            set
+            {
+                this.bodyField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
-    public string Attention
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class MessageBody
     {
-        get
+
+        private string contentTypeField;
+
+        private byte[] bodyField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string ContentType
         {
-            return this.attentionField;
+            get
+            {
+                return this.contentTypeField;
+            }
+            set
+            {
+                this.contentTypeField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 1)]
+        public byte[] Body
         {
-            this.attentionField = value;
+            get
+            {
+                return this.bodyField;
+            }
+            set
+            {
+                this.bodyField = value;
+            }
         }
     }
-}
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SealedDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
+    public partial class SealedDelivery
+    {
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Sender")]
-public partial class Sender
-{
+        private SignedDelivery signedDeliveryField;
 
-    private string idField;
+        private Seal sealField;
 
-    private string nameField;
+        private SignatureType signatureField;
 
-    private string attentionField;
+        private string idField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string Id
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public SignedDelivery SignedDelivery
         {
-            return this.idField;
+            get
+            {
+                return this.signedDeliveryField;
+            }
+            set
+            {
+                this.signedDeliveryField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public Seal Seal
         {
-            this.idField = value;
+            get
+            {
+                return this.sealField;
+            }
+            set
+            {
+                this.sealField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public string Name
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 2)]
+        public SignatureType Signature
         {
-            return this.nameField;
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.nameField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public string Attention
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SignedDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
+    public partial class SignedDelivery
     {
-        get
-        {
-            return this.attentionField;
-        }
-        set
-        {
-            this.attentionField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "ForwardDelivery", Namespace = "http://minameddelanden.gov.se/schema/Service/v3")]
-public partial class ForwardDelivery1
-{
-
-    private DeliveryHeader headerField;
 
-    private ForwardMessage messageField;
+        private SecureDelivery2 deliveryField;
 
-    private SealedDelivery2 orginalDeliveryField;
+        private SignatureType signatureField;
 
-    private string messageIdToForwardField;
+        private string idField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public DeliveryHeader Header
-    {
-        get
-        {
-            return this.headerField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public SecureDelivery2 Delivery
         {
-            this.headerField = value;
+            get
+            {
+                return this.deliveryField;
+            }
+            set
+            {
+                this.deliveryField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public ForwardMessage Message
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
+        public SignatureType Signature
         {
-            return this.messageField;
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.messageField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public SealedDelivery2 OrginalDelivery
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SecureDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
+    public partial class SecureDelivery2
     {
-        get
+
+        private SecureDeliveryHeader headerField;
+
+        private SecureMessage1[] messageField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public SecureDeliveryHeader Header
         {
-            return this.orginalDeliveryField;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Message", Order = 1)]
+        public SecureMessage1[] Message
         {
-            this.orginalDeliveryField = value;
+            get
+            {
+                return this.messageField;
+            }
+            set
+            {
+                this.messageField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public string MessageIdToForward
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message/v2")]
+    public partial class SecureDeliveryHeader
     {
-        get
-        {
-            return this.messageIdToForwardField;
-        }
-        set
-        {
-            this.messageIdToForwardField = value;
-        }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class ForwardMessage
-{
+        private Sender senderField;
 
-    private string subjectField;
+        private string recipientField;
 
-    private MessageBody bodyField;
+        private string referenceField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string Subject
-    {
-        get
+        private string correlationIdField;
+
+        private string attentionField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public Sender Sender
         {
-            return this.subjectField;
+            get
+            {
+                return this.senderField;
+            }
+            set
+            {
+                this.senderField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public string Recipient
         {
-            this.subjectField = value;
+            get
+            {
+                return this.recipientField;
+            }
+            set
+            {
+                this.recipientField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public MessageBody Body
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public string Reference
+        {
+            get
+            {
+                return this.referenceField;
+            }
+            set
+            {
+                this.referenceField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        public string CorrelationId
         {
-            return this.bodyField;
+            get
+            {
+                return this.correlationIdField;
+            }
+            set
+            {
+                this.correlationIdField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
+        public string Attention
         {
-            this.bodyField = value;
+            get
+            {
+                return this.attentionField;
+            }
+            set
+            {
+                this.attentionField = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class MessageBody
-{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SecureMessage", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
+    public partial class SecureMessage1
+    {
 
-    private string contentTypeField;
+        private MessageHeader1 headerField;
 
-    private byte[] bodyField;
+        private MessageBody bodyField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string ContentType
-    {
-        get
-        {
-            return this.contentTypeField;
-        }
-        set
+        private Attachment[] attachmentField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public MessageHeader1 Header
         {
-            this.contentTypeField = value;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 1)]
-    public byte[] Body
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public MessageBody Body
         {
-            return this.bodyField;
+            get
+            {
+                return this.bodyField;
+            }
+            set
+            {
+                this.bodyField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Attachment", Order = 2)]
+        public Attachment[] Attachment
         {
-            this.bodyField = value;
+            get
+            {
+                return this.attachmentField;
+            }
+            set
+            {
+                this.attachmentField = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SealedDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
-public partial class SealedDelivery2
-{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "MessageHeader", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
+    public partial class MessageHeader1
+    {
 
-    private SignedDelivery2 signedDeliveryField;
+        private string idField;
 
-    private Seal sealField;
+        private string subjectField;
 
-    private SignatureType signatureField;
+        private SupportInfo1 supportinfoField;
 
-    private string idField;
+        private OfficialMatter officialMatterField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public SignedDelivery2 SignedDelivery
-    {
-        get
+        private MetaData[] metadataField;
+
+        private string languageField;
+
+        private ReplyOptions replyField;
+
+        private bool replyFieldSpecified;
+
+        private ReceiptOptions receiptRequestField;
+
+        private bool receiptRequestFieldSpecified;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string Id
         {
-            return this.signedDeliveryField;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public string Subject
         {
-            this.signedDeliveryField = value;
+            get
+            {
+                return this.subjectField;
+            }
+            set
+            {
+                this.subjectField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public Seal Seal
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public SupportInfo1 Supportinfo
         {
-            return this.sealField;
+            get
+            {
+                return this.supportinfoField;
+            }
+            set
+            {
+                this.supportinfoField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        public OfficialMatter OfficialMatter
         {
-            this.sealField = value;
+            get
+            {
+                return this.officialMatterField;
+            }
+            set
+            {
+                this.officialMatterField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 2)]
-    public SignatureType Signature
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Metadata", Order = 4)]
+        public MetaData[] Metadata
         {
-            return this.signatureField;
+            get
+            {
+                return this.metadataField;
+            }
+            set
+            {
+                this.metadataField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "language", Order = 5)]
+        public string Language
         {
-            this.signatureField = value;
+            get
+            {
+                return this.languageField;
+            }
+            set
+            {
+                this.languageField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
+        public ReplyOptions Reply
         {
-            return this.idField;
+            get
+            {
+                return this.replyField;
+            }
+            set
+            {
+                this.replyField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ReplySpecified
         {
-            this.idField = value;
+            get
+            {
+                return this.replyFieldSpecified;
+            }
+            set
+            {
+                this.replyFieldSpecified = value;
+            }
         }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SignedDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
-public partial class SignedDelivery2 
-{
-
-    private SecureDelivery2 deliveryField;
-
-    private SignatureType signatureField;
-
-    private string idField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public SecureDelivery2 Delivery
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 7)]
+        public ReceiptOptions ReceiptRequest
         {
-            return this.deliveryField;
+            get
+            {
+                return this.receiptRequestField;
+            }
+            set
+            {
+                this.receiptRequestField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ReceiptRequestSpecified
         {
-            this.deliveryField = value;
+            get
+            {
+                return this.receiptRequestFieldSpecified;
+            }
+            set
+            {
+                this.receiptRequestFieldSpecified = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
-    public SignatureType Signature
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SupportInfo", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
+    public partial class SupportInfo1
     {
-        get
+
+        private string textField;
+
+        private string uRLField;
+
+        private string phoneNumberField;
+
+        private string emailAdressField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string Text
         {
-            return this.signatureField;
+            get
+            {
+                return this.textField;
+            }
+            set
+            {
+                this.textField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "anyURI", Order = 1)]
+        public string URL
         {
-            this.signatureField = value;
+            get
+            {
+                return this.uRLField;
+            }
+            set
+            {
+                this.uRLField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public string PhoneNumber
         {
-            return this.idField;
+            get
+            {
+                return this.phoneNumberField;
+            }
+            set
+            {
+                this.phoneNumberField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        public string EmailAdress
         {
-            this.idField = value;
+            get
+            {
+                return this.emailAdressField;
+            }
+            set
+            {
+                this.emailAdressField = value;
+            }
         }
     }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SecureDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
-public partial class SecureDelivery2
-{
-
-    private SecureDeliveryHeader headerField;
-
-    private SecureMessage1[] messageField;
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public SecureDeliveryHeader Header
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
+    public partial class OfficialMatter
     {
-        get
-        {
-            return this.headerField;
-        }
-        set
+
+        private object itemField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("OfficialMatterExtension", typeof(OfficialMatterExtension), Order = 0)]
+        public object Item
         {
-            this.headerField = value;
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Message", Order = 1)]
-    public SecureMessage1[] Message
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/OfficialMatter/v3")]
+    public partial class OfficialMatterExtension
     {
-        get
-        {
-            return this.messageField;
-        }
-        set
-        {
-            this.messageField = value;
-        }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message/v2")]
-public partial class SecureDeliveryHeader
-{
+        private System.DateTime timestampField;
 
-    private Sender senderField;
+        private System.Xml.XmlElement[] anyField;
 
-    private string recipientField;
+        private OfficialMatterExtensionIdentity identityField;
 
-    private string referenceField;
+        private string matterSubjectField;
 
-    private string correlationIdField;
+        private string eventTypeField;
 
-    private string attentionField;
+        private OfficialMatterExtensionMatterStatus matterStatusField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public Sender Sender
-    {
-        get
-        {
-            return this.senderField;
-        }
-        set
+        private bool matterStatusFieldSpecified;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "date", Order = 0)]
+        public System.DateTime Timestamp
         {
-            this.senderField = value;
+            get
+            {
+                return this.timestampField;
+            }
+            set
+            {
+                this.timestampField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public string Recipient
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 1)]
+        public System.Xml.XmlElement[] Any
         {
-            return this.recipientField;
+            get
+            {
+                return this.anyField;
+            }
+            set
+            {
+                this.anyField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public OfficialMatterExtensionIdentity Identity
         {
-            this.recipientField = value;
+            get
+            {
+                return this.identityField;
+            }
+            set
+            {
+                this.identityField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public string Reference
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        public string MatterSubject
         {
-            return this.referenceField;
+            get
+            {
+                return this.matterSubjectField;
+            }
+            set
+            {
+                this.matterSubjectField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
+        public string EventType
         {
-            this.referenceField = value;
+            get
+            {
+                return this.eventTypeField;
+            }
+            set
+            {
+                this.eventTypeField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public string CorrelationId
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
+        public OfficialMatterExtensionMatterStatus MatterStatus
         {
-            return this.correlationIdField;
+            get
+            {
+                return this.matterStatusField;
+            }
+            set
+            {
+                this.matterStatusField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool MatterStatusSpecified
         {
-            this.correlationIdField = value;
+            get
+            {
+                return this.matterStatusFieldSpecified;
+            }
+            set
+            {
+                this.matterStatusFieldSpecified = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
-    public string Attention
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://minameddelanden.gov.se/schema/OfficialMatter/v3")]
+    public partial class OfficialMatterExtensionIdentity
     {
-        get
-        {
-            return this.attentionField;
-        }
-        set
-        {
-            this.attentionField = value;
-        }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SecureMessage", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
-public partial class SecureMessage1
-{
+        private string eventIdField;
 
-    private MessageHeader1 headerField;
+        private string officialMatterIdField;
 
-    private MessageBody bodyField;
+        private string precedingEventIdField;
 
-    private Attachment[] attachmentField;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string EventId
+        {
+            get
+            {
+                return this.eventIdField;
+            }
+            set
+            {
+                this.eventIdField = value;
+            }
+        }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public MessageHeader1 Header
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public string OfficialMatterId
         {
-            return this.headerField;
+            get
+            {
+                return this.officialMatterIdField;
+            }
+            set
+            {
+                this.officialMatterIdField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public string PrecedingEventId
         {
-            this.headerField = value;
+            get
+            {
+                return this.precedingEventIdField;
+            }
+            set
+            {
+                this.precedingEventIdField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public MessageBody Body
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://minameddelanden.gov.se/schema/OfficialMatter/v3")]
+    public enum OfficialMatterExtensionMatterStatus
     {
-        get
-        {
-            return this.bodyField;
-        }
-        set
-        {
-            this.bodyField = value;
-        }
+
+        /// <remarks/>
+        senderinitiative,
+
+        /// <remarks/>
+        recipientinitiative,
+
+        /// <remarks/>
+        closed,
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Attachment", Order = 2)]
-    public Attachment[] Attachment
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class MetaData
     {
-        get
+
+        private string tagField;
+
+        private string valueField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string Tag
         {
-            return this.attachmentField;
+            get
+            {
+                return this.tagField;
+            }
+            set
+            {
+                this.tagField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public string Value
         {
-            this.attachmentField = value;
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+            }
         }
     }
-}
+
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Reply")]
+    public enum ReplyOptions
+    {
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "MessageHeader", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
-public partial class MessageHeader1
-{
+        /// <remarks/>
+        REQUESTED,
 
-    private string idField;
+        /// <remarks/>
+        ACCEPTED,
+
+        /// <remarks/>
+        NOT_ALLOWED,
+    }
 
-    private string subjectField;
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Receipt")]
+    public enum ReceiptOptions
+    {
 
-    private SupportInfo1 supportinfoField;
+        /// <remarks/>
+        NOT,
 
-    private OfficialMatter officialMatterField;
+        /// <remarks/>
+        SIMPLE,
 
-    private MetaData[] metadataField;
+        /// <remarks/>
+        SIGNED,
+    }
 
-    private string languageField;
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class Attachment
+    {
 
-    private ReplyOptions replyField;
+        private string contentTypeField;
 
-    private bool replyFieldSpecified;
+        private byte[] bodyField;
 
-    private ReceiptOptions receiptRequestField;
+        private string checksumField;
 
-    private bool receiptRequestFieldSpecified;
+        private string filenameField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string Id
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string ContentType
         {
-            return this.idField;
+            get
+            {
+                return this.contentTypeField;
+            }
+            set
+            {
+                this.contentTypeField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 1)]
+        public byte[] Body
         {
-            this.idField = value;
+            get
+            {
+                return this.bodyField;
+            }
+            set
+            {
+                this.bodyField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public string Subject
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public string Checksum
         {
-            return this.subjectField;
+            get
+            {
+                return this.checksumField;
+            }
+            set
+            {
+                this.checksumField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        public string Filename
         {
-            this.subjectField = value;
+            get
+            {
+                return this.filenameField;
+            }
+            set
+            {
+                this.filenameField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public SupportInfo1 Supportinfo
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class SignatureType
     {
-        get
-        {
-            return this.supportinfoField;
-        }
-        set
+
+        private SignedInfoType signedInfoField;
+
+        private SignatureValueType signatureValueField;
+
+        private KeyInfoType keyInfoField;
+
+        private ObjectType[] objectField;
+
+        private string idField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public SignedInfoType SignedInfo
         {
-            this.supportinfoField = value;
+            get
+            {
+                return this.signedInfoField;
+            }
+            set
+            {
+                this.signedInfoField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public OfficialMatter OfficialMatter
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public SignatureValueType SignatureValue
         {
-            return this.officialMatterField;
+            get
+            {
+                return this.signatureValueField;
+            }
+            set
+            {
+                this.signatureValueField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public KeyInfoType KeyInfo
         {
-            this.officialMatterField = value;
+            get
+            {
+                return this.keyInfoField;
+            }
+            set
+            {
+                this.keyInfoField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Metadata", Order = 4)]
-    public MetaData[] Metadata
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Object", Order = 3)]
+        public ObjectType[] Object
         {
-            return this.metadataField;
+            get
+            {
+                return this.objectField;
+            }
+            set
+            {
+                this.objectField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.metadataField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "language", Order = 5)]
-    public string Language
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class SignedInfoType
     {
-        get
+
+        private CanonicalizationMethodType canonicalizationMethodField;
+
+        private SignatureMethodType signatureMethodField;
+
+        private ReferenceType[] referenceField;
+
+        private string idField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public CanonicalizationMethodType CanonicalizationMethod
         {
-            return this.languageField;
+            get
+            {
+                return this.canonicalizationMethodField;
+            }
+            set
+            {
+                this.canonicalizationMethodField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public SignatureMethodType SignatureMethod
         {
-            this.languageField = value;
+            get
+            {
+                return this.signatureMethodField;
+            }
+            set
+            {
+                this.signatureMethodField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
-    public ReplyOptions Reply
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Reference", Order = 2)]
+        public ReferenceType[] Reference
         {
-            return this.replyField;
+            get
+            {
+                return this.referenceField;
+            }
+            set
+            {
+                this.referenceField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.replyField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool ReplySpecified
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class CanonicalizationMethodType
     {
-        get
+
+        private System.Xml.XmlNode[] anyField;
+
+        private string algorithmField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
+        public System.Xml.XmlNode[] Any
         {
-            return this.replyFieldSpecified;
+            get
+            {
+                return this.anyField;
+            }
+            set
+            {
+                this.anyField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
+        public string Algorithm
         {
-            this.replyFieldSpecified = value;
+            get
+            {
+                return this.algorithmField;
+            }
+            set
+            {
+                this.algorithmField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 7)]
-    public ReceiptOptions ReceiptRequest
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class SignatureMethodType
     {
-        get
-        {
-            return this.receiptRequestField;
-        }
-        set
+
+        private string hMACOutputLengthField;
+
+        private System.Xml.XmlNode[] anyField;
+
+        private string algorithmField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "integer", Order = 0)]
+        public string HMACOutputLength
         {
-            this.receiptRequestField = value;
+            get
+            {
+                return this.hMACOutputLengthField;
+            }
+            set
+            {
+                this.hMACOutputLengthField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool ReceiptRequestSpecified
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 1)]
+        public System.Xml.XmlNode[] Any
         {
-            return this.receiptRequestFieldSpecified;
+            get
+            {
+                return this.anyField;
+            }
+            set
+            {
+                this.anyField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
+        public string Algorithm
         {
-            this.receiptRequestFieldSpecified = value;
+            get
+            {
+                return this.algorithmField;
+            }
+            set
+            {
+                this.algorithmField = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SupportInfo", Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
-public partial class SupportInfo1
-{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class ReferenceType
+    {
 
-    private string textField;
+        private TransformType[] transformsField;
 
-    private string uRLField;
+        private DigestMethodType digestMethodField;
 
-    private string phoneNumberField;
+        private byte[] digestValueField;
 
-    private string emailAdressField;
+        private string idField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string Text
-    {
-        get
-        {
-            return this.textField;
-        }
-        set
-        {
-            this.textField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "anyURI", Order = 1)]
-    public string URL
-    {
-        get
-        {
-            return this.uRLField;
-        }
-        set
-        {
-            this.uRLField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public string PhoneNumber
-    {
-        get
-        {
-            return this.phoneNumberField;
-        }
-        set
-        {
-            this.phoneNumberField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public string EmailAdress
-    {
-        get
-        {
-            return this.emailAdressField;
-        }
-        set
-        {
-            this.emailAdressField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message/v3")]
-public partial class OfficialMatter
-{
-
-    private object itemField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("OfficialMatterExtension", typeof(OfficialMatterExtension), Order = 0)]
-    public object Item
-    {
-        get
-        {
-            return this.itemField;
-        }
-        set
-        {
-            this.itemField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/OfficialMatter/v3")]
-public partial class OfficialMatterExtension
-{
-
-    private System.DateTime timestampField;
-
-    private System.Xml.XmlElement[] anyField;
-
-    private OfficialMatterExtensionIdentity identityField;
-
-    private string matterSubjectField;
-
-    private string eventTypeField;
-
-    private OfficialMatterExtensionMatterStatus matterStatusField;
-
-    private bool matterStatusFieldSpecified;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "date", Order = 0)]
-    public System.DateTime Timestamp
-    {
-        get
-        {
-            return this.timestampField;
-        }
-        set
-        {
-            this.timestampField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 1)]
-    public System.Xml.XmlElement[] Any
-    {
-        get
-        {
-            return this.anyField;
-        }
-        set
-        {
-            this.anyField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public OfficialMatterExtensionIdentity Identity
-    {
-        get
-        {
-            return this.identityField;
-        }
-        set
-        {
-            this.identityField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public string MatterSubject
-    {
-        get
-        {
-            return this.matterSubjectField;
-        }
-        set
-        {
-            this.matterSubjectField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
-    public string EventType
-    {
-        get
-        {
-            return this.eventTypeField;
-        }
-        set
-        {
-            this.eventTypeField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
-    public OfficialMatterExtensionMatterStatus MatterStatus
-    {
-        get
-        {
-            return this.matterStatusField;
-        }
-        set
-        {
-            this.matterStatusField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool MatterStatusSpecified
-    {
-        get
-        {
-            return this.matterStatusFieldSpecified;
-        }
-        set
-        {
-            this.matterStatusFieldSpecified = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://minameddelanden.gov.se/schema/OfficialMatter/v3")]
-public partial class OfficialMatterExtensionIdentity
-{
-
-    private string eventIdField;
-
-    private string officialMatterIdField;
-
-    private string precedingEventIdField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string EventId
-    {
-        get
-        {
-            return this.eventIdField;
-        }
-        set
-        {
-            this.eventIdField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public string OfficialMatterId
-    {
-        get
-        {
-            return this.officialMatterIdField;
-        }
-        set
-        {
-            this.officialMatterIdField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public string PrecedingEventId
-    {
-        get
-        {
-            return this.precedingEventIdField;
-        }
-        set
-        {
-            this.precedingEventIdField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://minameddelanden.gov.se/schema/OfficialMatter/v3")]
-public enum OfficialMatterExtensionMatterStatus
-{
-
-    /// <remarks/>
-    senderinitiative,
-
-    /// <remarks/>
-    recipientinitiative,
-
-    /// <remarks/>
-    closed,
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class MetaData
-{
-
-    private string tagField;
-
-    private string valueField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string Tag
-    {
-        get
-        {
-            return this.tagField;
-        }
-        set
-        {
-            this.tagField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public string Value
-    {
-        get
-        {
-            return this.valueField;
-        }
-        set
-        {
-            this.valueField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Reply")]
-public enum ReplyOptions
-{
-
-    /// <remarks/>
-    REQUESTED,
-
-    /// <remarks/>
-    ACCEPTED,
-
-    /// <remarks/>
-    NOT_ALLOWED,
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Receipt")]
-public enum ReceiptOptions
-{
-
-    /// <remarks/>
-    NOT,
-
-    /// <remarks/>
-    SIMPLE,
-
-    /// <remarks/>
-    SIGNED,
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class Attachment
-{
-
-    private string contentTypeField;
-
-    private byte[] bodyField;
-
-    private string checksumField;
-
-    private string filenameField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string ContentType
-    {
-        get
-        {
-            return this.contentTypeField;
-        }
-        set
-        {
-            this.contentTypeField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 1)]
-    public byte[] Body
-    {
-        get
-        {
-            return this.bodyField;
-        }
-        set
-        {
-            this.bodyField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public string Checksum
-    {
-        get
-        {
-            return this.checksumField;
-        }
-        set
-        {
-            this.checksumField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public string Filename
-    {
-        get
-        {
-            return this.filenameField;
-        }
-        set
-        {
-            this.filenameField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class SignatureType
-{
-
-    private SignedInfoType signedInfoField;
-
-    private SignatureValueType signatureValueField;
-
-    private KeyInfoType keyInfoField;
-
-    private ObjectType[] objectField;
-
-    private string idField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public SignedInfoType SignedInfo
-    {
-        get
-        {
-            return this.signedInfoField;
-        }
-        set
-        {
-            this.signedInfoField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public SignatureValueType SignatureValue
-    {
-        get
-        {
-            return this.signatureValueField;
-        }
-        set
-        {
-            this.signatureValueField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public KeyInfoType KeyInfo
-    {
-        get
-        {
-            return this.keyInfoField;
-        }
-        set
-        {
-            this.keyInfoField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Object", Order = 3)]
-    public ObjectType[] Object
-    {
-        get
-        {
-            return this.objectField;
-        }
-        set
-        {
-            this.objectField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
-    {
-        get
-        {
-            return this.idField;
-        }
-        set
-        {
-            this.idField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class SignedInfoType
-{
-
-    private CanonicalizationMethodType canonicalizationMethodField;
-
-    private SignatureMethodType signatureMethodField;
-
-    private ReferenceType[] referenceField;
-
-    private string idField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public CanonicalizationMethodType CanonicalizationMethod
-    {
-        get
-        {
-            return this.canonicalizationMethodField;
-        }
-        set
-        {
-            this.canonicalizationMethodField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public SignatureMethodType SignatureMethod
-    {
-        get
-        {
-            return this.signatureMethodField;
-        }
-        set
-        {
-            this.signatureMethodField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Reference", Order = 2)]
-    public ReferenceType[] Reference
-    {
-        get
-        {
-            return this.referenceField;
-        }
-        set
-        {
-            this.referenceField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
-    {
-        get
-        {
-            return this.idField;
-        }
-        set
-        {
-            this.idField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class CanonicalizationMethodType
-{
-
-    private System.Xml.XmlNode[] anyField;
-
-    private string algorithmField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlTextAttribute()]
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
-    public System.Xml.XmlNode[] Any
-    {
-        get
-        {
-            return this.anyField;
-        }
-        set
-        {
-            this.anyField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
-    public string Algorithm
-    {
-        get
-        {
-            return this.algorithmField;
-        }
-        set
-        {
-            this.algorithmField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class SignatureMethodType
-{
-
-    private string hMACOutputLengthField;
-
-    private System.Xml.XmlNode[] anyField;
-
-    private string algorithmField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "integer", Order = 0)]
-    public string HMACOutputLength
-    {
-        get
-        {
-            return this.hMACOutputLengthField;
-        }
-        set
-        {
-            this.hMACOutputLengthField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlTextAttribute()]
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 1)]
-    public System.Xml.XmlNode[] Any
-    {
-        get
-        {
-            return this.anyField;
-        }
-        set
-        {
-            this.anyField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
-    public string Algorithm
-    {
-        get
-        {
-            return this.algorithmField;
-        }
-        set
-        {
-            this.algorithmField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class ReferenceType
-{
-
-    private TransformType[] transformsField;
-
-    private DigestMethodType digestMethodField;
-
-    private byte[] digestValueField;
-
-    private string idField;
-
-    private string uRIField;
-
-    private string typeField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlArrayAttribute(Order = 0)]
-    [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable = false)]
-    public TransformType[] Transforms
-    {
-        get
-        {
-            return this.transformsField;
-        }
-        set
-        {
-            this.transformsField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public DigestMethodType DigestMethod
-    {
-        get
-        {
-            return this.digestMethodField;
-        }
-        set
-        {
-            this.digestMethodField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 2)]
-    public byte[] DigestValue
-    {
-        get
-        {
-            return this.digestValueField;
-        }
-        set
-        {
-            this.digestValueField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
-    {
-        get
-        {
-            return this.idField;
-        }
-        set
-        {
-            this.idField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
-    public string URI
-    {
-        get
-        {
-            return this.uRIField;
-        }
-        set
-        {
-            this.uRIField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
-    public string Type
-    {
-        get
-        {
-            return this.typeField;
-        }
-        set
-        {
-            this.typeField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class TransformType
-{
-
-    private object[] itemsField;
-
-    private string[] textField;
-
-    private string algorithmField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string), Order = 0)]
-    public object[] Items
-    {
-        get
-        {
-            return this.itemsField;
-        }
-        set
-        {
-            this.itemsField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlTextAttribute()]
-    public string[] Text
-    {
-        get
-        {
-            return this.textField;
-        }
-        set
-        {
-            this.textField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
-    public string Algorithm
-    {
-        get
-        {
-            return this.algorithmField;
-        }
-        set
-        {
-            this.algorithmField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class DigestMethodType
-{
-
-    private System.Xml.XmlNode[] anyField;
-
-    private string algorithmField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlTextAttribute()]
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
-    public System.Xml.XmlNode[] Any
-    {
-        get
-        {
-            return this.anyField;
-        }
-        set
-        {
-            this.anyField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
-    public string Algorithm
-    {
-        get
-        {
-            return this.algorithmField;
-        }
-        set
-        {
-            this.algorithmField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class SignatureValueType
-{
-
-    private string idField;
-
-    private byte[] valueField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
-    {
-        get
-        {
-            return this.idField;
-        }
-        set
-        {
-            this.idField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlTextAttribute(DataType = "base64Binary")]
-    public byte[] Value
-    {
-        get
-        {
-            return this.valueField;
-        }
-        set
-        {
-            this.valueField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class KeyInfoType
-{
-
-    private object[] itemsField;
-
-    private ItemsChoiceType2[] itemsElementNameField;
-
-    private string[] textField;
-
-    private string idField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("KeyName", typeof(string), Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("KeyValue", typeof(KeyValueType), Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("MgmtData", typeof(string), Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("PGPData", typeof(PGPDataType), Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("RetrievalMethod", typeof(RetrievalMethodType), Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("SPKIData", typeof(SPKIDataType), Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("X509Data", typeof(X509DataType), Order = 0)]
-    [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-    public object[] Items
-    {
-        get
-        {
-            return this.itemsField;
-        }
-        set
-        {
-            this.itemsField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public ItemsChoiceType2[] ItemsElementName
-    {
-        get
-        {
-            return this.itemsElementNameField;
-        }
-        set
-        {
-            this.itemsElementNameField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlTextAttribute()]
-    public string[] Text
-    {
-        get
-        {
-            return this.textField;
-        }
-        set
-        {
-            this.textField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
-    {
-        get
-        {
-            return this.idField;
-        }
-        set
-        {
-            this.idField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class KeyValueType
-{
-
-    private object itemField;
-
-    private string[] textField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("DSAKeyValue", typeof(DSAKeyValueType), Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("RSAKeyValue", typeof(RSAKeyValueType), Order = 0)]
-    public object Item
-    {
-        get
-        {
-            return this.itemField;
-        }
-        set
-        {
-            this.itemField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlTextAttribute()]
-    public string[] Text
-    {
-        get
-        {
-            return this.textField;
-        }
-        set
-        {
-            this.textField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class DSAKeyValueType
-{
-
-    private byte[] pField;
-
-    private byte[] qField;
-
-    private byte[] gField;
-
-    private byte[] yField;
-
-    private byte[] jField;
-
-    private byte[] seedField;
-
-    private byte[] pgenCounterField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 0)]
-    public byte[] P
-    {
-        get
-        {
-            return this.pField;
-        }
-        set
-        {
-            this.pField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 1)]
-    public byte[] Q
-    {
-        get
-        {
-            return this.qField;
-        }
-        set
-        {
-            this.qField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 2)]
-    public byte[] G
-    {
-        get
-        {
-            return this.gField;
-        }
-        set
-        {
-            this.gField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 3)]
-    public byte[] Y
-    {
-        get
-        {
-            return this.yField;
-        }
-        set
-        {
-            this.yField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 4)]
-    public byte[] J
-    {
-        get
-        {
-            return this.jField;
-        }
-        set
-        {
-            this.jField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 5)]
-    public byte[] Seed
-    {
-        get
-        {
-            return this.seedField;
-        }
-        set
-        {
-            this.seedField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 6)]
-    public byte[] PgenCounter
-    {
-        get
-        {
-            return this.pgenCounterField;
-        }
-        set
-        {
-            this.pgenCounterField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class RSAKeyValueType
-{
-
-    private byte[] modulusField;
-
-    private byte[] exponentField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 0)]
-    public byte[] Modulus
-    {
-        get
-        {
-            return this.modulusField;
-        }
-        set
-        {
-            this.modulusField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 1)]
-    public byte[] Exponent
-    {
-        get
-        {
-            return this.exponentField;
-        }
-        set
-        {
-            this.exponentField = value;
-        }
-    }
-}
+        private string uRIField;
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class PGPDataType
-{
+        private string typeField;
 
-    private object[] itemsField;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable = false)]
+        public TransformType[] Transforms
+        {
+            get
+            {
+                return this.transformsField;
+            }
+            set
+            {
+                this.transformsField = value;
+            }
+        }
 
-    private ItemsChoiceType1[] itemsElementNameField;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public DigestMethodType DigestMethod
+        {
+            get
+            {
+                return this.digestMethodField;
+            }
+            set
+            {
+                this.digestMethodField = value;
+            }
+        }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", typeof(byte[]), DataType = "base64Binary", Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket", typeof(byte[]), DataType = "base64Binary", Order = 0)]
-    [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-    public object[] Items
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 2)]
+        public byte[] DigestValue
         {
-            return this.itemsField;
+            get
+            {
+                return this.digestValueField;
+            }
+            set
+            {
+                this.digestValueField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.itemsField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public ItemsChoiceType1[] ItemsElementName
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
+        public string URI
         {
-            return this.itemsElementNameField;
+            get
+            {
+                return this.uRIField;
+            }
+            set
+            {
+                this.uRIField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
+        public string Type
         {
-            this.itemsElementNameField = value;
+            get
+            {
+                return this.typeField;
+            }
+            set
+            {
+                this.typeField = value;
+            }
         }
     }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema = false)]
-public enum ItemsChoiceType1
-{
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlEnumAttribute("##any:")]
-    Item,
-
-    /// <remarks/>
-    PGPKeyID,
 
     /// <remarks/>
-    PGPKeyPacket,
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class RetrievalMethodType
-{
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class TransformType
+    {
 
-    private TransformType[] transformsField;
+        private object[] itemsField;
 
-    private string uRIField;
+        private string[] textField;
 
-    private string typeField;
+        private string algorithmField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlArrayAttribute(Order = 0)]
-    [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable = false)]
-    public TransformType[] Transforms
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string), Order = 0)]
+        public object[] Items
         {
-            return this.transformsField;
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
         }
-        set
-        {
-            this.transformsField = value;
-        }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
-    public string URI
-    {
-        get
-        {
-            return this.uRIField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string[] Text
         {
-            this.uRIField = value;
+            get
+            {
+                return this.textField;
+            }
+            set
+            {
+                this.textField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
-    public string Type
-    {
-        get
-        {
-            return this.typeField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
+        public string Algorithm
         {
-            this.typeField = value;
+            get
+            {
+                return this.algorithmField;
+            }
+            set
+            {
+                this.algorithmField = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class SPKIDataType
-{
-
-    private object[] itemsField;
-
     /// <remarks/>
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("SPKISexp", typeof(byte[]), DataType = "base64Binary", Order = 0)]
-    public object[] Items
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class DigestMethodType
     {
-        get
-        {
-            return this.itemsField;
-        }
-        set
-        {
-            this.itemsField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class X509DataType
-{
 
-    private object[] itemsField;
+        private System.Xml.XmlNode[] anyField;
 
-    private ItemsChoiceType[] itemsElementNameField;
+        private string algorithmField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("X509CRL", typeof(byte[]), DataType = "base64Binary", Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("X509Certificate", typeof(byte[]), DataType = "base64Binary", Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("X509IssuerSerial", typeof(X509IssuerSerialType), Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("X509SKI", typeof(byte[]), DataType = "base64Binary", Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute("X509SubjectName", typeof(string), Order = 0)]
-    [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-    public object[] Items
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
+        public System.Xml.XmlNode[] Any
         {
-            return this.itemsField;
+            get
+            {
+                return this.anyField;
+            }
+            set
+            {
+                this.anyField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
+        public string Algorithm
         {
-            this.itemsField = value;
+            get
+            {
+                return this.algorithmField;
+            }
+            set
+            {
+                this.algorithmField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public ItemsChoiceType[] ItemsElementName
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class SignatureValueType
     {
-        get
-        {
-            return this.itemsElementNameField;
-        }
-        set
-        {
-            this.itemsElementNameField = value;
-        }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class X509IssuerSerialType
-{
+        private string idField;
 
-    private string x509IssuerNameField;
+        private byte[] valueField;
 
-    private string x509SerialNumberField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string X509IssuerName
-    {
-        get
-        {
-            return this.x509IssuerNameField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.x509IssuerNameField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "integer", Order = 1)]
-    public string X509SerialNumber
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute(DataType = "base64Binary")]
+        public byte[] Value
         {
-            return this.x509SerialNumberField;
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+            }
         }
-        set
-        {
-            this.x509SerialNumberField = value;
-        }
     }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema = false)]
-public enum ItemsChoiceType
-{
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlEnumAttribute("##any:")]
-    Item,
-
-    /// <remarks/>
-    X509CRL,
-
-    /// <remarks/>
-    X509Certificate,
-
-    /// <remarks/>
-    X509IssuerSerial,
-
-    /// <remarks/>
-    X509SKI,
-
-    /// <remarks/>
-    X509SubjectName,
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema = false)]
-public enum ItemsChoiceType2
-{
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlEnumAttribute("##any:")]
-    Item,
-
-    /// <remarks/>
-    KeyName,
-
-    /// <remarks/>
-    KeyValue,
-
-    /// <remarks/>
-    MgmtData,
 
     /// <remarks/>
-    PGPData,
-
-    /// <remarks/>
-    RetrievalMethod,
-
-    /// <remarks/>
-    SPKIData,
-
-    /// <remarks/>
-    X509Data,
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-public partial class ObjectType
-{
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class KeyInfoType
+    {
 
-    private System.Xml.XmlNode[] anyField;
+        private object[] itemsField;
 
-    private string idField;
+        private ItemsChoiceType2[] itemsElementNameField;
 
-    private string mimeTypeField;
+        private string[] textField;
 
-    private string encodingField;
+        private string idField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlTextAttribute()]
-    [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
-    public System.Xml.XmlNode[] Any
-    {
-        get
-        {
-            return this.anyField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("KeyName", typeof(string), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("KeyValue", typeof(KeyValueType), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("MgmtData", typeof(string), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("PGPData", typeof(PGPDataType), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("RetrievalMethod", typeof(RetrievalMethodType), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("SPKIData", typeof(SPKIDataType), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509Data", typeof(X509DataType), Order = 0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        public object[] Items
         {
-            this.anyField = value;
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
-    {
-        get
-        {
-            return this.idField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemsChoiceType2[] ItemsElementName
         {
-            this.idField = value;
+            get
+            {
+                return this.itemsElementNameField;
+            }
+            set
+            {
+                this.itemsElementNameField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string MimeType
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string[] Text
         {
-            return this.mimeTypeField;
+            get
+            {
+                return this.textField;
+            }
+            set
+            {
+                this.textField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.mimeTypeField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
-    public string Encoding
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class KeyValueType
     {
-        get
-        {
-            return this.encodingField;
-        }
-        set
-        {
-            this.encodingField = value;
-        }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class Seal
-{
+        private object itemField;
 
-    private System.DateTime receivedTimeField;
+        private string[] textField;
 
-    private bool signaturesOKField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "date", Order = 0)]
-    public System.DateTime ReceivedTime
-    {
-        get
-        {
-            return this.receivedTimeField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("DSAKeyValue", typeof(DSAKeyValueType), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("RSAKeyValue", typeof(RSAKeyValueType), Order = 0)]
+        public object Item
         {
-            this.receivedTimeField = value;
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public bool SignaturesOK
-    {
-        get
-        {
-            return this.signaturesOKField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string[] Text
         {
-            this.signaturesOKField = value;
+            get
+            {
+                return this.textField;
+            }
+            set
+            {
+                this.textField = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "DeliveryStatus", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
-public partial class DeliveryStatus1
-{
-
-    private bool deliveredFlagField;
-
-    private NotificationTypes1[] notifiedByChannelField;
-
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public bool DeliveredFlag
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class DSAKeyValueType
     {
-        get
-        {
-            return this.deliveredFlagField;
-        }
-        set
-        {
-            this.deliveredFlagField = value;
-        }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("NotifiedByChannel", Order = 1)]
-    public NotificationTypes1[] NotifiedByChannel
-    {
-        get
-        {
-            return this.notifiedByChannelField;
-        }
-        set
-        {
-            this.notifiedByChannelField = value;
-        }
-    }
-}
+        private byte[] pField;
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotificationTypes", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
-public enum NotificationTypes1
-{
+        private byte[] qField;
 
-    /// <remarks/>
-    SMS,
+        private byte[] gField;
 
-    /// <remarks/>
-    EMail,
-}
+        private byte[] yField;
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotificationStatus", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
-public partial class NotificationStatus1
-{
+        private byte[] jField;
 
-    private string recipientIdField;
+        private byte[] seedField;
 
-    private DeliveryStatus1 deliveryStatusField;
+        private byte[] pgenCounterField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string RecipientId
-    {
-        get
-        {
-            return this.recipientIdField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 0)]
+        public byte[] P
         {
-            this.recipientIdField = value;
+            get
+            {
+                return this.pField;
+            }
+            set
+            {
+                this.pField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public DeliveryStatus1 DeliveryStatus
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 1)]
+        public byte[] Q
         {
-            return this.deliveryStatusField;
+            get
+            {
+                return this.qField;
+            }
+            set
+            {
+                this.qField = value;
+            }
         }
-        set
-        {
-            this.deliveryStatusField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotifyResult", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
-public partial class NotifyResult1
-{
 
-    private string transIdField;
-
-    private NotificationStatus1[] statusField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string TransId
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 2)]
+        public byte[] G
         {
-            return this.transIdField;
+            get
+            {
+                return this.gField;
+            }
+            set
+            {
+                this.gField = value;
+            }
         }
-        set
-        {
-            this.transIdField = value;
-        }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Status", Order = 1)]
-    public NotificationStatus1[] Status
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 3)]
+        public byte[] Y
         {
-            return this.statusField;
+            get
+            {
+                return this.yField;
+            }
+            set
+            {
+                this.yField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 4)]
+        public byte[] J
         {
-            this.statusField = value;
+            get
+            {
+                return this.jField;
+            }
+            set
+            {
+                this.jField = value;
+            }
         }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotificationMessage", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
-public partial class NotificationMessage1
-{
 
-    private MessageHeader1 headerField;
-
-    private MessageBody bodyField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public MessageHeader1 header
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 5)]
+        public byte[] Seed
         {
-            return this.headerField;
+            get
+            {
+                return this.seedField;
+            }
+            set
+            {
+                this.seedField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 6)]
+        public byte[] PgenCounter
         {
-            this.headerField = value;
+            get
+            {
+                return this.pgenCounterField;
+            }
+            set
+            {
+                this.pgenCounterField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public MessageBody body
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class RSAKeyValueType
     {
-        get
-        {
-            return this.bodyField;
-        }
-        set
-        {
-            this.bodyField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotificationDelivery", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
-public partial class NotificationDelivery1
-{
-
-    private DeliveryHeader headerField;
 
-    private NotificationMessage1 messageField;
+        private byte[] modulusField;
 
-    private EmailMessage emailMessageField;
+        private byte[] exponentField;
 
-    private SmsMessage smsMessageField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public DeliveryHeader Header
-    {
-        get
-        {
-            return this.headerField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 0)]
+        public byte[] Modulus
         {
-            this.headerField = value;
+            get
+            {
+                return this.modulusField;
+            }
+            set
+            {
+                this.modulusField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public NotificationMessage1 Message
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "base64Binary", Order = 1)]
+        public byte[] Exponent
         {
-            return this.messageField;
+            get
+            {
+                return this.exponentField;
+            }
+            set
+            {
+                this.exponentField = value;
+            }
         }
-        set
-        {
-            this.messageField = value;
-        }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public EmailMessage EmailMessage
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class PGPDataType
     {
-        get
+
+        private object[] itemsField;
+
+        private ItemsChoiceType1[] itemsElementNameField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", typeof(byte[]), DataType = "base64Binary", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket", typeof(byte[]), DataType = "base64Binary", Order = 0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        public object[] Items
         {
-            return this.emailMessageField;
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemsChoiceType1[] ItemsElementName
         {
-            this.emailMessageField = value;
+            get
+            {
+                return this.itemsElementNameField;
+            }
+            set
+            {
+                this.itemsElementNameField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public SmsMessage SmsMessage
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema = false)]
+    public enum ItemsChoiceType1
     {
-        get
-        {
-            return this.smsMessageField;
-        }
-        set
-        {
-            this.smsMessageField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
-public partial class EmailMessage
-{
 
-    private EmailMessageHeader headerField;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("##any:")]
+        Item,
 
-    private string textField;
+        /// <remarks/>
+        PGPKeyID,
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public EmailMessageHeader header
-    {
-        get
-        {
-            return this.headerField;
-        }
-        set
-        {
-            this.headerField = value;
-        }
+        /// <remarks/>
+        PGPKeyPacket,
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public string text
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class RetrievalMethodType
     {
-        get
-        {
-            return this.textField;
-        }
-        set
-        {
-            this.textField = value;
-        }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
-public partial class EmailMessageHeader
-{
+        private TransformType[] transformsField;
 
-    private string fromField;
+        private string uRIField;
 
-    private string subjectField;
+        private string typeField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string From
-    {
-        get
-        {
-            return this.fromField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable = false)]
+        public TransformType[] Transforms
         {
-            this.fromField = value;
+            get
+            {
+                return this.transformsField;
+            }
+            set
+            {
+                this.transformsField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public string Subject
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
+        public string URI
         {
-            return this.subjectField;
+            get
+            {
+                return this.uRIField;
+            }
+            set
+            {
+                this.uRIField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
+        public string Type
         {
-            this.subjectField = value;
+            get
+            {
+                return this.typeField;
+            }
+            set
+            {
+                this.typeField = value;
+            }
         }
     }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
-public partial class SmsMessage
-{
 
-    private SmsMessageHeader headerField;
-
-    private string textField;
-
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public SmsMessageHeader header
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class SPKIDataType
     {
-        get
-        {
-            return this.headerField;
-        }
-        set
+
+        private object[] itemsField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("SPKISexp", typeof(byte[]), DataType = "base64Binary", Order = 0)]
+        public object[] Items
         {
-            this.headerField = value;
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public string text
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class X509DataType
     {
-        get
-        {
-            return this.textField;
-        }
-        set
-        {
-            this.textField = value;
-        }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
-public partial class SmsMessageHeader
-{
+        private object[] itemsField;
 
-    private string fromField;
+        private ItemsChoiceType[] itemsElementNameField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string From
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509CRL", typeof(byte[]), DataType = "base64Binary", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509Certificate", typeof(byte[]), DataType = "base64Binary", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509IssuerSerial", typeof(X509IssuerSerialType), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509SKI", typeof(byte[]), DataType = "base64Binary", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509SubjectName", typeof(string), Order = 0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        public object[] Items
         {
-            return this.fromField;
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemsChoiceType[] ItemsElementName
         {
-            this.fromField = value;
+            get
+            {
+                return this.itemsElementNameField;
+            }
+            set
+            {
+                this.itemsElementNameField = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SecureDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class SecureDelivery1
-{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class X509IssuerSerialType
+    {
 
-    private DeliveryHeader headerField;
+        private string x509IssuerNameField;
 
-    private SecureMessage[] messageField;
+        private string x509SerialNumberField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public DeliveryHeader Header
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string X509IssuerName
         {
-            return this.headerField;
+            get
+            {
+                return this.x509IssuerNameField;
+            }
+            set
+            {
+                this.x509IssuerNameField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "integer", Order = 1)]
+        public string X509SerialNumber
         {
-            this.headerField = value;
+            get
+            {
+                return this.x509SerialNumberField;
+            }
+            set
+            {
+                this.x509SerialNumberField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Message", Order = 1)]
-    public SecureMessage[] Message
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema = false)]
+    public enum ItemsChoiceType
     {
-        get
-        {
-            return this.messageField;
-        }
-        set
-        {
-            this.messageField = value;
-        }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class SecureMessage
-{
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("##any:")]
+        Item,
 
-    private MessageHeader headerField;
+        /// <remarks/>
+        X509CRL,
 
-    private MessageBody bodyField;
+        /// <remarks/>
+        X509Certificate,
 
-    private Attachment[] attachmentField;
+        /// <remarks/>
+        X509IssuerSerial,
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public MessageHeader Header
-    {
-        get
-        {
-            return this.headerField;
-        }
-        set
-        {
-            this.headerField = value;
-        }
-    }
+        /// <remarks/>
+        X509SKI,
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public MessageBody Body
-    {
-        get
-        {
-            return this.bodyField;
-        }
-        set
-        {
-            this.bodyField = value;
-        }
+        /// <remarks/>
+        X509SubjectName,
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Attachment", Order = 2)]
-    public Attachment[] Attachment
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", IncludeInSchema = false)]
+    public enum ItemsChoiceType2
     {
-        get
-        {
-            return this.attachmentField;
-        }
-        set
-        {
-            this.attachmentField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class MessageHeader
-{
-
-    private string idField;
 
-    private string subjectField;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("##any:")]
+        Item,
 
-    private SupportInfo supportinfoField;
+        /// <remarks/>
+        KeyName,
 
-    private MetaData[] metadataField;
+        /// <remarks/>
+        KeyValue,
 
-    private string languageField;
+        /// <remarks/>
+        MgmtData,
 
-    private ReplyOptions replyField;
+        /// <remarks/>
+        PGPData,
 
-    private bool replyFieldSpecified;
+        /// <remarks/>
+        RetrievalMethod,
 
-    private ReceiptOptions receiptRequestField;
+        /// <remarks/>
+        SPKIData,
 
-    private bool receiptRequestFieldSpecified;
+        /// <remarks/>
+        X509Data,
+    }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string Id
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
+    public partial class ObjectType
     {
-        get
+
+        private System.Xml.XmlNode[] anyField;
+
+        private string idField;
+
+        private string mimeTypeField;
+
+        private string encodingField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order = 0)]
+        public System.Xml.XmlNode[] Any
         {
-            return this.idField;
+            get
+            {
+                return this.anyField;
+            }
+            set
+            {
+                this.anyField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.idField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public string Subject
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string MimeType
         {
-            return this.subjectField;
+            get
+            {
+                return this.mimeTypeField;
+            }
+            set
+            {
+                this.mimeTypeField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
+        public string Encoding
         {
-            this.subjectField = value;
+            get
+            {
+                return this.encodingField;
+            }
+            set
+            {
+                this.encodingField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public SupportInfo Supportinfo
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class Seal
     {
-        get
+
+        private System.DateTime receivedTimeField;
+
+        private bool signaturesOKField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "date", Order = 0)]
+        public System.DateTime ReceivedTime
         {
-            return this.supportinfoField;
+            get
+            {
+                return this.receivedTimeField;
+            }
+            set
+            {
+                this.receivedTimeField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public bool SignaturesOK
         {
-            this.supportinfoField = value;
+            get
+            {
+                return this.signaturesOKField;
+            }
+            set
+            {
+                this.signaturesOKField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Metadata", Order = 3)]
-    public MetaData[] Metadata
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "DeliveryStatus", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
+    public partial class DeliveryStatus1
     {
-        get
+
+        private bool deliveredFlagField;
+
+        private NotificationTypes1[] notifiedByChannelField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public bool DeliveredFlag
         {
-            return this.metadataField;
+            get
+            {
+                return this.deliveredFlagField;
+            }
+            set
+            {
+                this.deliveredFlagField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("NotifiedByChannel", Order = 1)]
+        public NotificationTypes1[] NotifiedByChannel
         {
-            this.metadataField = value;
+            get
+            {
+                return this.notifiedByChannelField;
+            }
+            set
+            {
+                this.notifiedByChannelField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "language", Order = 4)]
-    public string Language
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotificationTypes", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
+    public enum NotificationTypes1
     {
-        get
-        {
-            return this.languageField;
-        }
-        set
-        {
-            this.languageField = value;
-        }
+
+        /// <remarks/>
+        SMS,
+
+        /// <remarks/>
+        EMail,
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
-    public ReplyOptions Reply
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotificationStatus", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
+    public partial class NotificationStatus1
     {
-        get
+
+        private string recipientIdField;
+
+        private DeliveryStatus1 deliveryStatusField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string RecipientId
         {
-            return this.replyField;
+            get
+            {
+                return this.recipientIdField;
+            }
+            set
+            {
+                this.recipientIdField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public DeliveryStatus1 DeliveryStatus
         {
-            this.replyField = value;
+            get
+            {
+                return this.deliveryStatusField;
+            }
+            set
+            {
+                this.deliveryStatusField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool ReplySpecified
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotifyResult", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
+    public partial class NotifyResult1
     {
-        get
+
+        private string transIdField;
+
+        private NotificationStatus1[] statusField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string TransId
         {
-            return this.replyFieldSpecified;
+            get
+            {
+                return this.transIdField;
+            }
+            set
+            {
+                this.transIdField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Status", Order = 1)]
+        public NotificationStatus1[] Status
         {
-            this.replyFieldSpecified = value;
+            get
+            {
+                return this.statusField;
+            }
+            set
+            {
+                this.statusField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
-    public ReceiptOptions ReceiptRequest
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotificationMessage", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
+    public partial class NotificationMessage1
     {
-        get
+
+        private MessageHeader1 headerField;
+
+        private MessageBody bodyField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public MessageHeader1 header
         {
-            return this.receiptRequestField;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public MessageBody body
         {
-            this.receiptRequestField = value;
+            get
+            {
+                return this.bodyField;
+            }
+            set
+            {
+                this.bodyField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool ReceiptRequestSpecified
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "NotificationDelivery", Namespace = "http://minameddelanden.gov.se/schema/Notification/v3")]
+    public partial class NotificationDelivery1
     {
-        get
-        {
-            return this.receiptRequestFieldSpecified;
-        }
-        set
-        {
-            this.receiptRequestFieldSpecified = value;
-        }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class SupportInfo
-{
+        private DeliveryHeader headerField;
 
-    private string textField;
+        private NotificationMessage1 messageField;
 
-    private string logoField;
+        private EmailMessage emailMessageField;
 
-    private string uRLField;
+        private SmsMessage smsMessageField;
 
-    private string phoneNumberField;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public DeliveryHeader Header
+        {
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
+        }
 
-    private string emailAdressField;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public NotificationMessage1 Message
+        {
+            get
+            {
+                return this.messageField;
+            }
+            set
+            {
+                this.messageField = value;
+            }
+        }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string Text
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public EmailMessage EmailMessage
         {
-            return this.textField;
+            get
+            {
+                return this.emailMessageField;
+            }
+            set
+            {
+                this.emailMessageField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        public SmsMessage SmsMessage
         {
-            this.textField = value;
+            get
+            {
+                return this.smsMessageField;
+            }
+            set
+            {
+                this.smsMessageField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "anyURI", Order = 1)]
-    public string Logo
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
+    public partial class EmailMessage
     {
-        get
+
+        private EmailMessageHeader headerField;
+
+        private string textField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public EmailMessageHeader header
         {
-            return this.logoField;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public string text
         {
-            this.logoField = value;
+            get
+            {
+                return this.textField;
+            }
+            set
+            {
+                this.textField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(DataType = "anyURI", Order = 2)]
-    public string URL
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
+    public partial class EmailMessageHeader
     {
-        get
+
+        private string fromField;
+
+        private string subjectField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string From
         {
-            return this.uRLField;
+            get
+            {
+                return this.fromField;
+            }
+            set
+            {
+                this.fromField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public string Subject
         {
-            this.uRLField = value;
+            get
+            {
+                return this.subjectField;
+            }
+            set
+            {
+                this.subjectField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public string PhoneNumber
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
+    public partial class SmsMessage
     {
-        get
+
+        private SmsMessageHeader headerField;
+
+        private string textField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public SmsMessageHeader header
         {
-            return this.phoneNumberField;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public string text
         {
-            this.phoneNumberField = value;
+            get
+            {
+                return this.textField;
+            }
+            set
+            {
+                this.textField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
-    public string EmailAdress
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
+    public partial class SmsMessageHeader
     {
-        get
-        {
-            return this.emailAdressField;
-        }
-        set
+
+        private string fromField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string From
         {
-            this.emailAdressField = value;
+            get
+            {
+                return this.fromField;
+            }
+            set
+            {
+                this.fromField = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SignedDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class SignedDelivery1
-{
-
-    private SecureDelivery1 deliveryField;
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SecureDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class SecureDelivery1
+    {
 
-    private SignatureType signatureField;
+        private DeliveryHeader headerField;
 
-    private string idField;
+        private SecureMessage[] messageField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public SecureDelivery1 Delivery
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public DeliveryHeader Header
         {
-            return this.deliveryField;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Message", Order = 1)]
+        public SecureMessage[] Message
         {
-            this.deliveryField = value;
+            get
+            {
+                return this.messageField;
+            }
+            set
+            {
+                this.messageField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
-    public SignatureType Signature
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class SecureMessage
     {
-        get
-        {
-            return this.signatureField;
-        }
-        set
+
+        private MessageHeader headerField;
+
+        private MessageBody bodyField;
+
+        private Attachment[] attachmentField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public MessageHeader Header
         {
-            this.signatureField = value;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public MessageBody Body
         {
-            return this.idField;
+            get
+            {
+                return this.bodyField;
+            }
+            set
+            {
+                this.bodyField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Attachment", Order = 2)]
+        public Attachment[] Attachment
         {
-            this.idField = value;
+            get
+            {
+                return this.attachmentField;
+            }
+            set
+            {
+                this.attachmentField = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(TypeName = "SealedDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class SealedDelivery1
-{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class MessageHeader
+    {
 
-    private SignedDelivery1 signedDeliveryField;
+        private string idField;
 
-    private Seal sealField;
+        private string subjectField;
 
-    private SignatureType signatureField;
+        private SupportInfo supportinfoField;
 
-    private string idField;
+        private MetaData[] metadataField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public SignedDelivery1 SignedDelivery
-    {
-        get
+        private string languageField;
+
+        private ReplyOptions replyField;
+
+        private bool replyFieldSpecified;
+
+        private ReceiptOptions receiptRequestField;
+
+        private bool receiptRequestFieldSpecified;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string Id
         {
-            return this.signedDeliveryField;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public string Subject
         {
-            this.signedDeliveryField = value;
+            get
+            {
+                return this.subjectField;
+            }
+            set
+            {
+                this.subjectField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public Seal Seal
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public SupportInfo Supportinfo
         {
-            return this.sealField;
+            get
+            {
+                return this.supportinfoField;
+            }
+            set
+            {
+                this.supportinfoField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Metadata", Order = 3)]
+        public MetaData[] Metadata
         {
-            this.sealField = value;
+            get
+            {
+                return this.metadataField;
+            }
+            set
+            {
+                this.metadataField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 2)]
-    public SignatureType Signature
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "language", Order = 4)]
+        public string Language
         {
-            return this.signatureField;
+            get
+            {
+                return this.languageField;
+            }
+            set
+            {
+                this.languageField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
+        public ReplyOptions Reply
         {
-            this.signatureField = value;
+            get
+            {
+                return this.replyField;
+            }
+            set
+            {
+                this.replyField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ReplySpecified
+        {
+            get
+            {
+                return this.replyFieldSpecified;
+            }
+            set
+            {
+                this.replyFieldSpecified = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
+        public ReceiptOptions ReceiptRequest
         {
-            return this.idField;
+            get
+            {
+                return this.receiptRequestField;
+            }
+            set
+            {
+                this.receiptRequestField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ReceiptRequestSpecified
         {
-            this.idField = value;
+            get
+            {
+                return this.receiptRequestFieldSpecified;
+            }
+            set
+            {
+                this.receiptRequestFieldSpecified = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
-public partial class ForwardDelivery
-{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class SupportInfo
+    {
 
-    private DeliveryHeader headerField;
+        private string textField;
 
-    private ForwardMessage messageField;
+        private string logoField;
 
-    private SealedDelivery1 orginalDeliveryField;
+        private string uRLField;
 
-    private string messageIdToForwardField;
+        private string phoneNumberField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public DeliveryHeader Header
-    {
-        get
-        {
-            return this.headerField;
-        }
-        set
+        private string emailAdressField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string Text
         {
-            this.headerField = value;
+            get
+            {
+                return this.textField;
+            }
+            set
+            {
+                this.textField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public ForwardMessage Message
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "anyURI", Order = 1)]
+        public string Logo
         {
-            return this.messageField;
+            get
+            {
+                return this.logoField;
+            }
+            set
+            {
+                this.logoField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "anyURI", Order = 2)]
+        public string URL
         {
-            this.messageField = value;
+            get
+            {
+                return this.uRLField;
+            }
+            set
+            {
+                this.uRLField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-    public SealedDelivery1 OrginalDelivery
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        public string PhoneNumber
         {
-            return this.orginalDeliveryField;
+            get
+            {
+                return this.phoneNumberField;
+            }
+            set
+            {
+                this.phoneNumberField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 4)]
+        public string EmailAdress
         {
-            this.orginalDeliveryField = value;
+            get
+            {
+                return this.emailAdressField;
+            }
+            set
+            {
+                this.emailAdressField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-    public string MessageIdToForward
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SignedDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class SignedDelivery1
     {
-        get
-        {
-            return this.messageIdToForwardField;
-        }
-        set
-        {
-            this.messageIdToForwardField = value;
-        }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Service")]
-public partial class DeliveryStatus
-{
+        private SecureDelivery1 deliveryField;
 
-    private string recipientIdField;
+        private SignatureType signatureField;
 
-    private bool deliveredField;
+        private string idField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string RecipientId
-    {
-        get
-        {
-            return this.recipientIdField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public SecureDelivery1 Delivery
         {
-            this.recipientIdField = value;
+            get
+            {
+                return this.deliveryField;
+            }
+            set
+            {
+                this.deliveryField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public bool Delivered
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
+        public SignatureType Signature
         {
-            return this.deliveredField;
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.deliveredField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Service")]
-public partial class DeliveryResult
-{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(TypeName = "SealedDelivery", Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class SealedDelivery1
+    {
 
-    private string transIdField;
+        private SignedDelivery1 signedDeliveryField;
 
-    private DeliveryStatus[] statusField;
+        private Seal sealField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string TransId
-    {
-        get
+        private SignatureType signatureField;
+
+        private string idField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public SignedDelivery1 SignedDelivery
         {
-            return this.transIdField;
+            get
+            {
+                return this.signedDeliveryField;
+            }
+            set
+            {
+                this.signedDeliveryField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public Seal Seal
         {
-            this.transIdField = value;
+            get
+            {
+                return this.sealField;
+            }
+            set
+            {
+                this.sealField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Status", Order = 1)]
-    public DeliveryStatus[] Status
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 2)]
+        public SignatureType Signature
         {
-            return this.statusField;
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.statusField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message/v2")]
-public partial class SecureDelivery
-{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message")]
+    public partial class ForwardDelivery
+    {
 
-    private SecureDeliveryHeader headerField;
+        private DeliveryHeader headerField;
 
-    private SecureMessage[] messageField;
+        private ForwardMessage messageField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public SecureDeliveryHeader Header
-    {
-        get
+        private SealedDelivery1 orginalDeliveryField;
+
+        private string messageIdToForwardField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public DeliveryHeader Header
         {
-            return this.headerField;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public ForwardMessage Message
         {
-            this.headerField = value;
+            get
+            {
+                return this.messageField;
+            }
+            set
+            {
+                this.messageField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Message", Order = 1)]
-    public SecureMessage[] Message
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        public SealedDelivery1 OrginalDelivery
         {
-            return this.messageField;
+            get
+            {
+                return this.orginalDeliveryField;
+            }
+            set
+            {
+                this.orginalDeliveryField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        public string MessageIdToForward
         {
-            this.messageField = value;
+            get
+            {
+                return this.messageIdToForwardField;
+            }
+            set
+            {
+                this.messageIdToForwardField = value;
+            }
         }
     }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message/v2")]
-public partial class SignedDelivery
-{
 
-    private SecureDelivery deliveryField;
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Service")]
+    public partial class DeliveryStatus
+    {
 
-    private SignatureType signatureField;
+        private string recipientIdField;
 
-    private string idField;
+        private bool deliveredField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public SecureDelivery Delivery
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string RecipientId
         {
-            return this.deliveryField;
+            get
+            {
+                return this.recipientIdField;
+            }
+            set
+            {
+                this.recipientIdField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public bool Delivered
         {
-            this.deliveryField = value;
+            get
+            {
+                return this.deliveredField;
+            }
+            set
+            {
+                this.deliveredField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
-    public SignatureType Signature
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Service")]
+    public partial class DeliveryResult
     {
-        get
+
+        private string transIdField;
+
+        private DeliveryStatus[] statusField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string TransId
         {
-            return this.signatureField;
+            get
+            {
+                return this.transIdField;
+            }
+            set
+            {
+                this.transIdField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Status", Order = 1)]
+        public DeliveryStatus[] Status
         {
-            this.signatureField = value;
+            get
+            {
+                return this.statusField;
+            }
+            set
+            {
+                this.statusField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message/v2")]
+    public partial class SecureDelivery
     {
-        get
+
+        private SecureDeliveryHeader headerField;
+
+        private SecureMessage[] messageField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public SecureDeliveryHeader Header
         {
-            return this.idField;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Message", Order = 1)]
+        public SecureMessage[] Message
         {
-            this.idField = value;
+            get
+            {
+                return this.messageField;
+            }
+            set
+            {
+                this.messageField = value;
+            }
         }
     }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message/v2")]
-public partial class SealedDelivery
-{
 
-    private SignedDelivery signedDeliveryField;
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message/v2")]
+    public partial class SignedDelivery
+    {
 
-    private Seal sealField;
+        private SecureDelivery deliveryField;
 
-    private SignatureType signatureField;
+        private SignatureType signatureField;
 
-    private string idField;
+        private string idField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public SignedDelivery SignedDelivery
-    {
-        get
-        {
-            return this.signedDeliveryField;
-        }
-        set
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public SecureDelivery Delivery
         {
-            this.signedDeliveryField = value;
+            get
+            {
+                return this.deliveryField;
+            }
+            set
+            {
+                this.deliveryField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public Seal Seal
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 1)]
+        public SignatureType Signature
         {
-            return this.sealField;
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.sealField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 2)]
-    public SignatureType Signature
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Message/v2")]
+    public partial class SealedDelivery
     {
-        get
+
+        private SignedDelivery signedDeliveryField;
+
+        private Seal sealField;
+
+        private SignatureType signatureField;
+
+        private string idField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public SignedDelivery SignedDelivery
         {
-            return this.signatureField;
+            get
+            {
+                return this.signedDeliveryField;
+            }
+            set
+            {
+                this.signedDeliveryField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public Seal Seal
         {
-            this.signatureField = value;
+            get
+            {
+                return this.sealField;
+            }
+            set
+            {
+                this.sealField = value;
+            }
         }
-    }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
-    public string Id
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#", Order = 2)]
+        public SignatureType Signature
         {
-            return this.idField;
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "ID")]
+        public string Id
         {
-            this.idField = value;
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
         }
     }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification")]
-public partial class NotificationStatus
-{
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification")]
+    public partial class NotificationStatus
+    {
 
-    private string recipientIdField;
+        private string recipientIdField;
 
-    private NotificationTypes statusField;
+        private NotificationTypes statusField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string RecipientId
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string RecipientId
         {
-            return this.recipientIdField;
+            get
+            {
+                return this.recipientIdField;
+            }
+            set
+            {
+                this.recipientIdField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public NotificationTypes Status
         {
-            this.recipientIdField = value;
+            get
+            {
+                return this.statusField;
+            }
+            set
+            {
+                this.statusField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public NotificationTypes Status
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification")]
+    public enum NotificationTypes
     {
-        get
-        {
-            return this.statusField;
-        }
-        set
-        {
-            this.statusField = value;
-        }
-    }
-}
 
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification")]
-public enum NotificationTypes
-{
+        /// <remarks/>
+        SMS,
 
-    /// <remarks/>
-    SMS,
+        /// <remarks/>
+        EMail,
 
-    /// <remarks/>
-    EMail,
+        /// <remarks/>
+        IOS,
 
-    /// <remarks/>
-    IOS,
+        /// <remarks/>
+        Android,
 
-    /// <remarks/>
-    Android,
+        /// <remarks/>
+        Not,
+    }
 
     /// <remarks/>
-    Not,
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification")]
-public partial class NotifyResult
-{
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification")]
+    public partial class NotifyResult
+    {
 
-    private string transIdField;
+        private string transIdField;
 
-    private NotificationStatus[] statusField;
+        private NotificationStatus[] statusField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public string TransId
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public string TransId
         {
-            return this.transIdField;
+            get
+            {
+                return this.transIdField;
+            }
+            set
+            {
+                this.transIdField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Status", Order = 1)]
+        public NotificationStatus[] Status
         {
-            this.transIdField = value;
+            get
+            {
+                return this.statusField;
+            }
+            set
+            {
+                this.statusField = value;
+            }
         }
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Status", Order = 1)]
-    public NotificationStatus[] Status
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
+    public partial class NotificationMessage
     {
-        get
-        {
-            return this.statusField;
-        }
-        set
-        {
-            this.statusField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "4.0.30319.33440")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://minameddelanden.gov.se/schema/Notification/v2")]
-public partial class NotificationMessage
-{
 
-    private MessageHeader headerField;
+        private MessageHeader headerField;
 
-    private MessageBody bodyField;
+        private MessageBody bodyField;
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-    public MessageHeader header
-    {
-        get
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        public MessageHeader header
         {
-            return this.headerField;
+            get
+            {
+                return this.headerField;
+            }
+            set
+            {
+                this.headerField = value;
+            }
         }
-        set
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        public MessageBody body
         {
-            this.headerField = value;
+            get
+            {
+                return this.bodyField;
+            }
+            set
+            {
+                this.bodyField = value;
+            }
         }
     }
 
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-    public MessageBody body
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "notify", WrapperNamespace = "http://minameddelanden.gov.se/schema/Service/v2", IsWrapped = true)]
+    public partial class notifyRequest
     {
-        get
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/schema/Service/v2", Order = 0)]
+        public NotificationDelivery notify;
+
+        public notifyRequest()
         {
-            return this.bodyField;
         }
-        set
+
+        public notifyRequest(NotificationDelivery notify)
         {
-            this.bodyField = value;
+            this.notify = notify;
         }
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName = "notify", WrapperNamespace = "http://minameddelanden.gov.se/schema/Service/v2", IsWrapped = true)]
-public partial class notifyRequest
-{
-
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/schema/Service/v2", Order = 0)]
-    public NotificationDelivery notify;
-
-    public notifyRequest()
-    {
     }
 
-    public notifyRequest(NotificationDelivery notify)
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "notifyResponse", WrapperNamespace = "http://minameddelanden.gov.se/Service", IsWrapped = true)]
+    public partial class notifyResponse
     {
-        this.notify = notify;
-    }
-}
 
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName = "notifyResponse", WrapperNamespace = "http://minameddelanden.gov.se/Service", IsWrapped = true)]
-public partial class notifyResponse
-{
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/Service", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public NotifyResult @return;
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/Service", Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public NotifyResult @return;
+        public notifyResponse()
+        {
+        }
 
-    public notifyResponse()
-    {
+        public notifyResponse(NotifyResult @return)
+        {
+            this.@return = @return;
+        }
     }
 
-    public notifyResponse(NotifyResult @return)
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "deliverSecure", WrapperNamespace = "http://minameddelanden.gov.se/schema/Service/v2", IsWrapped = true)]
+    public partial class deliverSecureRequest
     {
-        this.@return = @return;
-    }
-}
 
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName = "deliverSecure", WrapperNamespace = "http://minameddelanden.gov.se/schema/Service/v2", IsWrapped = true)]
-public partial class deliverSecureRequest
-{
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/schema/Service/v2", Order = 0)]
+        public SealedDelivery deliverSecure;
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/schema/Service/v2", Order = 0)]
-    public SealedDelivery deliverSecure;
+        public deliverSecureRequest()
+        {
+        }
 
-    public deliverSecureRequest()
-    {
+        public deliverSecureRequest(SealedDelivery deliverSecure)
+        {
+            this.deliverSecure = deliverSecure;
+        }
     }
 
-    public deliverSecureRequest(SealedDelivery deliverSecure)
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "deliverSecureResponse", WrapperNamespace = "http://minameddelanden.gov.se/Service", IsWrapped = true)]
+    public partial class deliverSecureResponse
     {
-        this.deliverSecure = deliverSecure;
-    }
-}
 
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName = "deliverSecureResponse", WrapperNamespace = "http://minameddelanden.gov.se/Service", IsWrapped = true)]
-public partial class deliverSecureResponse
-{
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/Service", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public DeliveryResult @return;
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/Service", Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public DeliveryResult @return;
+        public deliverSecureResponse()
+        {
+        }
 
-    public deliverSecureResponse()
-    {
+        public deliverSecureResponse(DeliveryResult @return)
+        {
+            this.@return = @return;
+        }
     }
 
-    public deliverSecureResponse(DeliveryResult @return)
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "deliverForward", WrapperNamespace = "http://minameddelanden.gov.se/Service", IsWrapped = true)]
+    public partial class deliverForwardRequest
     {
-        this.@return = @return;
-    }
-}
 
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName = "deliverForward", WrapperNamespace = "http://minameddelanden.gov.se/Service", IsWrapped = true)]
-public partial class deliverForwardRequest
-{
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/Service", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public ForwardDelivery arg0;
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/Service", Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public ForwardDelivery arg0;
+        public deliverForwardRequest()
+        {
+        }
 
-    public deliverForwardRequest()
-    {
+        public deliverForwardRequest(ForwardDelivery arg0)
+        {
+            this.arg0 = arg0;
+        }
     }
 
-    public deliverForwardRequest(ForwardDelivery arg0)
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "deliverForwardResponse", WrapperNamespace = "http://minameddelanden.gov.se/Service", IsWrapped = true)]
+    public partial class deliverForwardResponse
     {
-        this.arg0 = arg0;
-    }
-}
-
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-[System.ServiceModel.MessageContractAttribute(WrapperName = "deliverForwardResponse", WrapperNamespace = "http://minameddelanden.gov.se/Service", IsWrapped = true)]
-public partial class deliverForwardResponse
-{
 
-    [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/Service", Order = 0)]
-    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public DeliveryResult @return;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "http://minameddelanden.gov.se/Service", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public DeliveryResult @return;
 
-    public deliverForwardResponse()
-    {
-    }
+        public deliverForwardResponse()
+        {
+        }
 
-    public deliverForwardResponse(DeliveryResult @return)
-    {
-        this.@return = @return;
+        public deliverForwardResponse(DeliveryResult @return)
+        {
+            this.@return = @return;
+        }
     }
-}
 
 
 
