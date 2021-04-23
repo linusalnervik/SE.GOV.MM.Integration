@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using SE.GOV.MM.Integration.Core.Interface;
 using SE.GOV.MM.Integration.Core.Model;
 using Service;
@@ -12,19 +13,24 @@ namespace SE.GOV.MM.Integration.Infrastructure
 {
     public class SerializeHelper:ISerializeHelper
     {
-        private readonly ILogger _logger;
+        private readonly ILogger logger;
 
         public SerializeHelper(ILogger logger)
         {
-            _logger = logger;
+            this.logger = logger;
+        }
+
+        public SerializeHelper()
+        {
+            logger = new Logger<SerializeHelper>(new NullLoggerFactory());
         }
 
         /// <summary>
         /// Serialize a SignedDelivery object to a XmlDocument. using defaultnamespaceV3.
         /// </summary>
-       internal XmlDocument SerializeToXmlDocumentV3(SignedDelivery signedDelivery, string defaultNameSpace)
+        public XmlDocument SerializeToXmlDocumentV3(SignedDelivery signedDelivery, string defaultNameSpace)
         {
-            _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelperV3: incoming SerializeToXmlDocumentV3"));
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelperV3: incoming SerializeToXmlDocumentV3"));
 
             var xmlDocument = new XmlDocument();
             xmlDocument.PreserveWhitespace = false;
@@ -48,16 +54,16 @@ namespace SE.GOV.MM.Integration.Infrastructure
                 xmlDocument.Load(memoryStream);
             }
 
-            _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: leaving SerializeToXmlDocumentV3"));
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: leaving SerializeToXmlDocumentV3"));
             return xmlDocument;
         }
 
         /// <summary>
         /// Serialize a SealedDelivery object to a XmlDocument. using defaultnamespaceV2, that is a property from config file, add this to xmlserializer.
         /// </summary>
-        internal XmlDocument SerializeToXmlDocumentV3(SealedDelivery sealedDelivery, string defaultNameSpaceV3)
+        public XmlDocument SerializeToXmlDocumentV3(SealedDelivery sealedDelivery, string defaultNameSpaceV3)
         {
-            _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: incoming SerializeToXmlDocumentV3"));
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: incoming SerializeToXmlDocumentV3"));
 
             var xmlDocument = new XmlDocument();
             xmlDocument.PreserveWhitespace = false;
@@ -81,7 +87,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
                 xmlDocument.Load(memoryStream);
             }
 
-            _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: leaving SerializeToXmlDocumentV3"));
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: leaving SerializeToXmlDocumentV3"));
             return xmlDocument;
         }
 
@@ -90,7 +96,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
         /// </summary>
         public SignedDelivery DeserializeXmlToSignedDeliveryV3(XmlDocument xmlDocument, string defaultNameSpaceV3)
         {
-            _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: incoming DeserializeXmlToSignedDeliveryV3"));
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: incoming DeserializeXmlToSignedDeliveryV3"));
 
             SignedDelivery signedDelivery;
             using (var memoryStream = new MemoryStream(UTF8Encoding.UTF8.GetBytes(xmlDocument.OuterXml)))
@@ -111,7 +117,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
                 }
             }
 
-            _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: leaving DeserializeXmlToSignedDeliveryV3"));
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: leaving DeserializeXmlToSignedDeliveryV3"));
             return signedDelivery;
         }
 
@@ -120,7 +126,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
         /// </summary>
         public SealedDelivery DeserializeXmlToSealedDeliveryV3(XmlDocument xmlDocument, string defaultNameSpaceV3)
         {
-            _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: incoming DeserializeXmlToSealedDeliveryV3"));
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: incoming DeserializeXmlToSealedDeliveryV3"));
 
             SealedDelivery sealedDelivery;
             using (var memoryStream = new MemoryStream(UTF8Encoding.UTF8.GetBytes(xmlDocument.OuterXml)))
@@ -141,7 +147,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
                 }
             }
 
-            _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: leaving DeserializeXmlToSealedDeliveryV3"));
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Signing.Helper.SerializeHelper: leaving DeserializeXmlToSealedDeliveryV3"));
             return sealedDelivery;
         }
     }

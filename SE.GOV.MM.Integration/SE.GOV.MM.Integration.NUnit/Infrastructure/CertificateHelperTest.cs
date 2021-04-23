@@ -49,7 +49,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             Assert.IsTrue(certificate.PublicKey != null);
         }
 
-        private static ILogger SetupLogging()
+        private static ILogger<CertificateHelper> SetupLogging()
         {
             var logSettings = new EventLogSettings() { SourceName = "MM", LogName = "MM" };
 
@@ -58,7 +58,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
                 builder
                     .AddEventLog(logSettings);
             });
-            return loggerFactory.CreateLogger<Program>();
+            return loggerFactory.CreateLogger<CertificateHelper>();
         }
     }
 }

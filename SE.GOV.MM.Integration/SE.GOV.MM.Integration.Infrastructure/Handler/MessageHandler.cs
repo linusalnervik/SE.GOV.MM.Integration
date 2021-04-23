@@ -1,5 +1,6 @@
 ﻿using Authority;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using Recipient;
 using SE.GOV.MM.Integration.Core.Model;
 using Service;
@@ -22,9 +23,15 @@ namespace SE.GOV.MM.Integration.Infrastructure
     internal class MessageHandler
     {
         private readonly ILogger logger;
-        internal MessageHandler(ILogger logger)
+        public  MessageHandler(ILogger logger)
         {
             this.logger = logger;
+        }
+
+        public MessageHandler()
+        {
+         this.logger = new Logger<MessageHandler>(new NullLoggerFactory());
+
         }
 
         internal async Task<DeliveryResult> SendMessageToMailBoxOperator(SealedDelivery SealedDelivery, X509Certificate2 x509Certificate2, string endpointAdress)

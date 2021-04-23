@@ -6,7 +6,9 @@ using System.Xml;
 namespace SE.GOV.MM.Integration.Core.Interface
 {
    public interface ISigningHandler
-    {
-         bool IsValidSignature(XmlDocument xmlDoc);
+    {   
+            bool IsMessageSigned(XmlDocument xmlDoc);
+            bool IsValidSignature(XmlDocument xmlDoc);
+            void SignXmlDocument(XmlDocument xmlDoc, string tagName);      
     }
 }

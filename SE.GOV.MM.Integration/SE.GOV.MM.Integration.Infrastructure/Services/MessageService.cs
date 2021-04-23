@@ -30,6 +30,7 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
         {
             this.logger = logger;
         }
+
         /// <summary>
         /// Handles sending message to user.
         /// </summary>
@@ -44,8 +45,9 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: entering distributeSecure"));
             try
             {
+                var log = new Logger<CertificateHelper>(new NullLoggerFactory());
                 // Get X509Certificate
-                var certificateHelper = new CertificateHelper(logger);
+                var certificateHelper = new CertificateHelper(log);
                 var x509Certificate = certificateHelper.GetXMLSigningCertificateFromUrl(certificateUrl, certificatePassword);
 
                 logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: leaving distributeSecure"));
@@ -71,8 +73,9 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: entering distributeSecure"));
             try
             {
+                var log = new Logger<CertificateHelper>(new NullLoggerFactory());
                 // Get X509Certificate
-                var certificateHelper = new CertificateHelper(logger);
+                var certificateHelper = new CertificateHelper(log);
                 var x509Certificate = certificateHelper.GetXMLSigningCertificateFromStore(signingCertificateSubjectName);
 
                 logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: leaving distributeSecure"));
@@ -151,8 +154,10 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
         {
             try
             {
+                var log = new Logger<CertificateHelper>(new NullLoggerFactory());
+
                 // Get X509Certificate
-                var certificateHelper = new CertificateHelper(logger);
+                var certificateHelper = new CertificateHelper(log);
                 var x509Certificate = certificateHelper.GetXMLSigningCertificateFromUrl(certificateUrl, password);
 
                 return await handleIsUserReachableInFaRV3(recipientId, senderOrgNr, endpointAdress, x509Certificate);
@@ -177,8 +182,10 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
 
             try
             {
+                var log = new Logger<CertificateHelper>(new NullLoggerFactory());
+
                 // Get X509Certificate
-                var certificateHelper = new CertificateHelper(logger);
+                var certificateHelper = new CertificateHelper(log);
                 var x509Certificate = certificateHelper.GetXMLSigningCertificateFromStore(signingCertificateSubjectName);
 
                 return await handleIsUserReachableInFaRV3(recipientId, senderOrgNr, endpointAdress, x509Certificate);
@@ -224,7 +231,7 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
         public async Task<Sender[]> GetSenders(string endpointAdress, X509Certificate2 x509Certificate2)
         {
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: entering GetSenders"));
-
+          
             // Initiate messageHandler
             var messageHandler = new MessageHandler(logger);
 
@@ -284,8 +291,6 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
                 signingHandler.SignXmlDocument(xmlDocSignedDelivery, TagName.Delivery.AsString(EnumFormat.Description));
                 SignedDelivery = serializehelper.DeserializeXmlToSignedDeliveryV3(xmlDocSignedDelivery, defaultNamespace);
             }
-
-            xmlDocSignedDelivery.Save(@"c:\\temp\\output.xml");
 
             // Create signed sealeddelivery 
             var SealedDelivery = CreateSealadDelivery();

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using System;
 using System.Security.Cryptography.X509Certificates;
 
@@ -6,19 +7,25 @@ namespace SE.GOV.MM.Integration.Infrastructure
 {
     public class CertificateHelper : ICertificateHelper
     {
-        private readonly ILogger _logger;
+        public X509Certificate _X509Certificate { get;}
+        public ILogger logger;
 
         public CertificateHelper(ILogger logger)
         {
-            _logger = logger;
+            this.logger = logger;
         }
 
+        public CertificateHelper()
+        {
+            logger = new Logger<CertificateHelper>(new NullLoggerFactory());
+        }
+     
         /// <summary>
         /// Get the certificate used to sign xml document from certificate store.
         /// </summary>
         public X509Certificate2 GetXMLSigningCertificateFromStore(string signingCertificateSubjectName)
         {
-            _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.CertificateHelper: incoming call GetXMLSigningCertificateFromStore"));
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.CertificateHelper: incoming call GetXMLSigningCertificateFromStore"));
 
             var certificate = new X509Certificate2();
             var certificates = new X509Certificate2Collection();
@@ -34,14 +41,14 @@ namespace SE.GOV.MM.Integration.Infrastructure
             }
             catch (Exception ce)
             {
-                _logger.LogError(ce, ce.Message);
+                logger.LogError(ce, ce.Message);
             }
 
 
             if (certificates.Count == 0)
             {
                 var errorMessage = string.Format("SE.GOV.MM.Integration.Infrastructure.SigningCertificateHelper: No certificate found, sign xml.");
-                _logger.LogError(errorMessage);
+                logger.LogError(errorMessage);
                 store.Close();
                 throw new Exception(errorMessage);
             }
@@ -52,7 +59,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
 
             store.Close();
 
-            _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.SigningCertificateHelper: leaving GetXMLSigningCertificateFromStore"));
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.SigningCertificateHelper: leaving GetXMLSigningCertificateFromStore"));
             return certificate;
         }
 
@@ -64,16 +71,16 @@ namespace SE.GOV.MM.Integration.Infrastructure
         /// <returns></returns>
         public X509Certificate2 GetXMLSigningCertificateFromUrl(string url, string password)
         {
-            _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.CertificateHelper: incoming call GetXMLSigningCertificateFromUrl"));
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.CertificateHelper: incoming call GetXMLSigningCertificateFromUrl"));
             try
             {
                 var x509Certifiate2 = new X509Certificate2(url, password);
-                _logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.SigningCertificateHelper: leaving GetXMLSigningCertificateFromUrl"));
+                logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.SigningCertificateHelper: leaving GetXMLSigningCertificateFromUrl"));
                 return x509Certifiate2;
             }
             catch (Exception ce)
             {
-                _logger.LogError(ce, ce.Message);
+                logger.LogError(ce, ce.Message);
                 throw ce;
             }
         }

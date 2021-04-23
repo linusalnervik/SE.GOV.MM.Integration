@@ -10,5 +10,7 @@ namespace SE.GOV.MM.Integration.Core.Interface
     {
         SignedDelivery DeserializeXmlToSignedDeliveryV3(XmlDocument xmlDocument, string defaultNameSpaceV3);
         SealedDelivery DeserializeXmlToSealedDeliveryV3(XmlDocument xmlDocument, string defaultNameSpaceV3);
+        XmlDocument SerializeToXmlDocumentV3(SignedDelivery signedDelivery, string defaultNameSpace);
+        XmlDocument SerializeToXmlDocumentV3(SealedDelivery sealedDelivery, string defaultNameSpaceV3);
     }
 }

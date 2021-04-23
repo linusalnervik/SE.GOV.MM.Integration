@@ -4,9 +4,9 @@
     <TargetFrameworks>netcoreapp3.1;net48;net47</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SE.GOV.MM.Integration.Core</PackageId>
-    <AssemblyVersion>1.0.5.0</AssemblyVersion>
-    <FileVersion>1.0.5.0</FileVersion>
-    <Version>1.0.5</Version>
+    <AssemblyVersion>1.0.7.0</AssemblyVersion>
+    <FileVersion>1.0.7.0</FileVersion>
+    <Version>1.0.7</Version>
     <PackageProjectUrl>https://www.minameddelanden.se/</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/linusalnervik/SE.GOV.MM.Integration/master/SE.GOV.MM.Integration/mm_logo_org_rgb.png</PackageIconUrl>
     <Copyright>MIT License</Copyright>
@@ -16,7 +16,7 @@
 This project contains the core implementation.</Description>
     <PackageLicenseFile>Licensing.txt</PackageLicenseFile>
     <Authors>MinaMeddelanden</Authors>
-    <PackageReleaseNotes>This it the first complete commit with all necessary implementations.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added missing interface</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

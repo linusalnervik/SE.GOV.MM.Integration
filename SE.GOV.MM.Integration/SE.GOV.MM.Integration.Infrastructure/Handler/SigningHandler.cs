@@ -6,15 +6,15 @@ using System.Xml;
 
 namespace SE.GOV.MM.Integration.Infrastructure
 {
-    internal class SigningHandler
+    public class SigningHandler : ISigningHandler
     {
 
         private X509Certificate2 x509Certificate2 { get; set; }
 
-        internal SigningHandler() {}
+        public SigningHandler() { }
 
-      
-        internal SigningHandler(X509Certificate2 x509Certificate2)
+
+        public SigningHandler(X509Certificate2 x509Certificate2)
         {
             this.x509Certificate2 = x509Certificate2;
         }
@@ -24,12 +24,13 @@ namespace SE.GOV.MM.Integration.Infrastructure
         /// </summary>
         /// <param name="xmlDoc">Document to sign</param>
         /// <param name="tagName">Element to insert signature after</param>
-        internal void SignXmlDocument(XmlDocument xmlDoc, string tagName)
+        public void SignXmlDocument(XmlDocument xmlDoc, string tagName, X509Certificate2 x509Certificate2=null)
         {
+            if (x509Certificate2 != null) this.x509Certificate2 = x509Certificate2;
             xmlDoc.Normalize();
 
             SignedXml signedXml = new SignedXml(xmlDoc);
-            signedXml.SigningKey = x509Certificate2.PrivateKey;
+            signedXml.SigningKey = this.x509Certificate2.PrivateKey;
 
             // Create a reference to be signed.
             Reference reference = new Reference("");
@@ -41,8 +42,8 @@ namespace SE.GOV.MM.Integration.Infrastructure
             signedXml.KeyInfo = new KeyInfo();
 
             var keyInfoData = new KeyInfoX509Data();
-            keyInfoData.AddSubjectName(x509Certificate2.SubjectName.Name);
-            keyInfoData.AddCertificate(x509Certificate2);
+            keyInfoData.AddSubjectName(this.x509Certificate2.SubjectName.Name);
+            keyInfoData.AddCertificate(this.x509Certificate2);
             signedXml.KeyInfo.AddClause(keyInfoData);
 
             signedXml.ComputeSignature();
@@ -56,14 +57,14 @@ namespace SE.GOV.MM.Integration.Infrastructure
         /// </summary>
         /// <param name="xmlDoc">message to check</param>
         /// <returns>status</returns>
-        internal bool IsValidSignature(XmlDocument xmlDoc)
+        public bool IsValidSignature(XmlDocument xmlDoc)
         {
 
             SignedXml signedXml = new SignedXml(xmlDoc);
             XmlNodeList nodeList = xmlDoc.GetElementsByTagName("Signature");
             bool hasValidSignature = false;
 
-            
+
             foreach (XmlElement element in nodeList)
             {
                 XmlNodeList certificates = xmlDoc.GetElementsByTagName("X509Certificate");
@@ -80,7 +81,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
         /// </summary>
         /// <param name="xmlDoc">message to check</param>
         /// <returns>status</returns>
-        internal bool IsMessageSigned(XmlDocument xmlDoc)
+        public bool IsMessageSigned(XmlDocument xmlDoc)
         {
             XmlNodeList nodeList = xmlDoc.GetElementsByTagName("Signature");
             XmlNodeList certificates = xmlDoc.GetElementsByTagName("X509Certificate");

@@ -22,7 +22,6 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
         public string certificatePassword { get; } = "5085873593180405";
         public string certificateCN { get; } = "Kommun A";
 
-      //  public string endpointAdressService { get;  } = @"https://notarealhost.skatteverket.se/webservice/acc1accao/Service/v3";
         public string endpointAdressAuthory { get; set; } = @"https://notarealhost.skatteverket.se/webservice/acc1accao/Authority";
 
         public string endpointAdressRecipient { get; set; } = @"https://notarealhost.skatteverket.se/webservice/acc1accao/Recipient/v3";
@@ -71,13 +70,15 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
         {
             //Arrange
             var logger = new Logger<MessageService>(new NullLoggerFactory());
+            var log = new Logger<CertificateHelper>(new NullLoggerFactory());
+
             var xmlDocument = new XmlDocument();
             xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDelivery.xml");
             string defaultNamespace = DefaultNamespace.v3.AsString(EnumFormat.Description);
             var serializeHelper = new SerializeHelper(logger);
             var signedDelivery = serializeHelper.DeserializeXmlToSignedDeliveryV3(xmlDocument, defaultNamespace);
             var messageService = new MessageService(logger);
-            var certificateHelper = new CertificateHelper(logger);
+            var certificateHelper = new CertificateHelper(log);
             var x509Certificate2 = certificateHelper.GetXMLSigningCertificateFromUrl(certificateUrl, certificatePassword);
 
             //Act
@@ -111,8 +112,10 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
         {
             //Arrange
             var logger = new Logger<MessageService>(new NullLoggerFactory());
+            var log = new Logger<CertificateHelper>(new NullLoggerFactory());
+
             var messageService = new MessageService(logger);
-            var certificateHelper = new CertificateHelper(logger);
+            var certificateHelper = new CertificateHelper(log);
             var x509Certificate2 = certificateHelper.GetXMLSigningCertificateFromUrl(certificateUrl, certificatePassword);
 
             //Act
