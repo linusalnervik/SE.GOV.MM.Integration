@@ -31,7 +31,7 @@ This project contains the infrastructure implementation.</Description>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.4" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.5" />
     <PackageReference Include="SE.GOV.MM.Integration.Core" Version="1.0.7" />
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="4.7.0" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="4.7.1" />
     <PackageReference Include="System.ServiceModel.Duplex" Version="4.7.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.7.0" />
