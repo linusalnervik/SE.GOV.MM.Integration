@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net48;net47</TargetFrameworks>
+    <TargetFrameworks>net7.0;net48</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SE.GOV.MM.Integration.Core</PackageId>
     <AssemblyVersion>1.0.7.0</AssemblyVersion>
@@ -24,7 +24,7 @@ This project contains the core implementation.</Description>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.ServiceModel.Primitives" Version="4.7.0" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.10.2" />
   </ItemGroup>
 
   <ItemGroup>

@@ -38,6 +38,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
         {
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageHandler: entering SendMessageToMailBoxOperator"));
 
+
             var binding = new BasicHttpBinding()
             {
                 Security = new BasicHttpSecurity()

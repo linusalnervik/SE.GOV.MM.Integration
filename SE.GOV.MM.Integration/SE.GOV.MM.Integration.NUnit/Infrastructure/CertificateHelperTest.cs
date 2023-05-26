@@ -1,17 +1,19 @@
+using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.EventLog;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using NUnit.Framework;
 using SE.GOV.MM.Integration.Infrastructure;
 using System;
+using System.Net;
 
 namespace SE.GOV.MM.Integration.NUnit.Infrastructure
 {
     [TestFixture]
     public class CertificateHelperTest
     {
-        public string certificateUrl { get;}= TestContext.CurrentContext.TestDirectory + "\\Certificates\\Kommun A.p12";
-        public string certificatePassword { get; } = "5085873593180405";
+        public string certificateUrl { get;}= TestContext.CurrentContext.TestDirectory + "\\Certificates\\KommunA.p12";
+        public string certificatePassword { get; } = "4729451359506045";
         public string certificateCN { get; } = "Kommun A";
 
         public CertificateHelper certificateHelper { get; set; }

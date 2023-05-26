@@ -1,4 +1,5 @@
 ﻿using EnumsNET;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using NUnit.Framework;
@@ -8,6 +9,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -18,8 +21,8 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
     [TestFixture]
     public class MessageServiceTest
     {
-        public string certificateUrl { get; } = TestContext.CurrentContext.TestDirectory + "\\Certificates\\Kommun A.p12";
-        public string certificatePassword { get; } = "5085873593180405";
+        public string certificateUrl { get; } = TestContext.CurrentContext.TestDirectory + "\\Certificates\\KommunA.p12";
+        public string certificatePassword { get; } = "4729451359506045";
         public string certificateCN { get; } = "Kommun A";
 
         public string endpointAdressAuthory { get; set; } = @"https://notarealhost.skatteverket.se/webservice/acc1accao/Authority";
@@ -80,7 +83,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var messageService = new MessageService(logger);
             var certificateHelper = new CertificateHelper(log);
             var x509Certificate2 = certificateHelper.GetXMLSigningCertificateFromUrl(certificateUrl, certificatePassword);
-
+           
             //Act
             var result =await messageService.distributeSecure(signedDelivery, endpointAdressRecipient, endpointAdressAuthory, x509Certificate2);
 
@@ -94,7 +97,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             //Arrange
             var logger = new Logger<MessageService>(new NullLoggerFactory());
             var xmlDocument = new XmlDocument();
-            xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDeliveryWithSignature.xml");
+            xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDeliveryWithoutSignature.xml");
             string defaultNamespace = DefaultNamespace.v3.AsString(EnumFormat.Description);
             var serializeHelper = new SerializeHelper(logger);
             var signedDelivery = serializeHelper.DeserializeXmlToSignedDeliveryV3(xmlDocument, defaultNamespace);
@@ -128,7 +131,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             Assert.IsTrue(result.ToList().Count>0);
 
         }
-
+//        19861003T010
         [Test]
         public async Task IsUserReachableInFaRV3()
         {
@@ -141,9 +144,52 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
 
             //Act
             var result = await messageService.IsUserReachableInFaRV3(recipientId, senderOrgNr, endpointAdressRecipient, certificateUrl, certificatePassword);
-           
+
             //Assert
-            Assert.IsTrue(result.ToList().Count > 0);
+            Assert.IsTrue(result.ToList()[0].SenderAccepted);
+
+        }
+        [Test]
+        public async Task UserNotReachableInFaRV3()
+        {
+            //Arrange
+            var logger = new Logger<MessageService>(new NullLoggerFactory());
+            var messageService = new MessageService(logger);
+            var recipientId = @"197810182382";
+            var senderOrgNr = @"162120001355";
+
+
+            //Act
+            var result = await messageService.IsUserReachableInFaRV3(recipientId, senderOrgNr, endpointAdressRecipient, certificateUrl, certificatePassword);
+
+            //Assert
+            Assert.IsTrue(!result.ToList()[0].SenderAccepted);
+
+        }
+
+        [Test]
+        public async Task UserValidationErrorReachableInFaRV3()
+        {
+            //Arrange
+            var logger = new Logger<MessageService>(new NullLoggerFactory());
+            var messageService = new MessageService(logger);
+            var recipientId = @"19861003T010";
+            var senderOrgNr = @"162120001355";
+
+
+            //Act
+            try
+            {
+                var result = await messageService.IsUserReachableInFaRV3(recipientId, senderOrgNr, endpointAdressRecipient, certificateUrl, certificatePassword);
+                Assert.Fail();
+            }
+            catch (CommunicationException ex) 
+            {
+                Assert.Pass();
+            }
+            
+
+           
 
         }
     }
