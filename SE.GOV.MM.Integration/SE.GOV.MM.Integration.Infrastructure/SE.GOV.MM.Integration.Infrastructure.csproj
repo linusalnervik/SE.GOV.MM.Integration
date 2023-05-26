@@ -4,9 +4,9 @@
     <TargetFrameworks>net7.0;net48</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>   
     <PackageId>SE.GOV.MM.Integration.Infrastructure</PackageId>
-    <AssemblyVersion>1.0.14.0</AssemblyVersion>
-    <FileVersion>1.0.14.0</FileVersion>
-    <Version>1.0.14</Version>
+    <AssemblyVersion>1.0.15.0</AssemblyVersion>
+    <FileVersion>1.0.15.0</FileVersion>
+    <Version>1.0.15</Version>
     <PackageProjectUrl>https://www.minameddelanden.se/</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/linusalnervik/SE.GOV.MM.Integration/master/SE.GOV.MM.Integration/mm_logo_org_rgb.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/linusalnervik/SE.GOV.MM.Integration</RepositoryUrl>
@@ -30,7 +30,7 @@ This project contains the infrastructure implementation.</Description>
     <PackageReference Include="Enums.NET" Version="4.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
-    <PackageReference Include="SE.GOV.MM.Integration.Core" Version="1.0.7" />
+    <PackageReference Include="SE.GOV.MM.Integration.Core" Version="1.0.8" />
     <PackageReference Include="System.Security.Cryptography.Xml" Version="7.0.1" />
     <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.2" />
     <PackageReference Include="System.ServiceModel.Http" Version="4.10.2" />
