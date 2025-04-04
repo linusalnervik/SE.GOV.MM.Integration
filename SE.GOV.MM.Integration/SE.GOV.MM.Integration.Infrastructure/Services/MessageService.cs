@@ -20,6 +20,7 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
     public class MessageService : IMessageService
     {
         private readonly ILogger logger;
+        public int timeoutInSeconds = 60;
 
         public MessageService()
         {
@@ -233,7 +234,7 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: entering GetSenders"));
           
             // Initiate messageHandler
-            var messageHandler = new MessageHandler(logger);
+            var messageHandler = new MessageHandler(logger, timeoutInSeconds);
 
             //Get IsUserReachable Status
             var response = await messageHandler.GetSendersResponse(x509Certificate2, endpointAdress);
@@ -250,7 +251,7 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
         private async Task<ReachabilityStatus[]> handleIsUserReachableInFaRV3(string recipientId, string senderOrgNr, string endpointAdress, X509Certificate2 x509Certificate)
         {
             // Initiate messageHandler
-            var messageHandler = new MessageHandler(logger);
+            var messageHandler = new MessageHandler(logger, timeoutInSeconds);
 
             //Get IsUserReachable Status
             var response = await messageHandler.IsUserReachableInFaRV3(recipientId, senderOrgNr, endpointAdress, x509Certificate);
@@ -264,7 +265,7 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: entering handleDistributeSecure"));
 
             // Initilize messageHandler
-            var messageHandler = new MessageHandler(logger);
+            var messageHandler = new MessageHandler(logger, timeoutInSeconds);
 
             //Check if valid Sender
             var senders = await GetSenders(endpointAdressAuthority, x509Certificate);

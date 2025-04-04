@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net9.0;net48</TargetFrameworks>
+    <TargetFrameworks>net9.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SE.GOV.MM.Integration.Core</PackageId>
     <AssemblyVersion>1.0.9.0</AssemblyVersion>
@@ -17,6 +17,8 @@ This project contains the core implementation.</Description>
     <PackageLicenseFile>Licensing.txt</PackageLicenseFile>
     <Authors>MinaMeddelanden</Authors>
     <PackageReleaseNotes>.NET 9</PackageReleaseNotes>
+	<IncludeSymbols>true</IncludeSymbols>
+	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>

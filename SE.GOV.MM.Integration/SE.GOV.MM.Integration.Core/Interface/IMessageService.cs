@@ -14,6 +14,6 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
         Task<ReachabilityStatus[]> IsUserReachableInFaRV3(string recipientId, string senderOrgNr, string endpointAdress, string signingCertificateSubjectName);
         Task<ReachabilityStatus[]> IsUserReachableInFaRV3(string recipientId, string senderOrgNr, string endpointAdress, string certificateUrl, string password);
         Task<ReachabilityStatus[]> IsUserReachableInFaRV3(string recipientId, string senderOrgNr, string endpointAdress, X509Certificate2 x509Certificate);
-        Task<bool> IsValidSignature(XmlDocument xmlDocument);
+        Task<bool> IsValidSignature(XmlDocument xmlDocument); 
     }
 }

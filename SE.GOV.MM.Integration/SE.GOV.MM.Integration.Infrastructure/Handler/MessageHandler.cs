@@ -20,26 +20,15 @@ using System.Xml;
 
 namespace SE.GOV.MM.Integration.Infrastructure
 {
-    internal class MessageHandler
+    internal class MessageHandler(ILogger logger, int timeoutInSeconds)
     {
-        private readonly ILogger logger;
-        public  MessageHandler(ILogger logger)
-        {
-            this.logger = logger;
-        }
-
-        public MessageHandler()
-        {
-         this.logger = new Logger<MessageHandler>(new NullLoggerFactory());
-
-        }
-
-        internal async Task<DeliveryResult> SendMessageToMailBoxOperator(SealedDelivery SealedDelivery, X509Certificate2 x509Certificate2, string endpointAdress, int timeoutInSeconds = 60)
+ 
+        internal async Task<DeliveryResult> SendMessageToMailBoxOperator(SealedDelivery SealedDelivery, X509Certificate2 x509Certificate2, string endpointAdress)
         {
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageHandler: entering SendMessageToMailBoxOperator"));
 
 
-            var binding = GetBinding(timeoutInSeconds);
+            var binding = GetBinding();
 
             try
             {
@@ -64,7 +53,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
         /// <param name="recipient">Recipient to check if reachable</param>
         /// <param name="senderOrgNr">Sender Organizationnumber</param>
         /// <returns></returns>
-        internal async Task<isReachableResponse> IsUserReachableInFaRV3(string recipientId, string senderOrgNr, string endpointAdress, X509Certificate2 x509Certificate2, int timeoutInSeconds=60)
+        internal async Task<isReachableResponse> IsUserReachableInFaRV3(string recipientId, string senderOrgNr, string endpointAdress, X509Certificate2 x509Certificate2)
         {
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageHandler: incoming IsUserReachableInFaRV3"));
 
@@ -72,7 +61,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
          
             try
             {
-                using (var client = new RecipientPortv3Client(GetBinding(timeoutInSeconds), GetEndpoint(endpointAdress)))
+                using (var client = new RecipientPortv3Client(GetBinding(), GetEndpoint(endpointAdress)))
                 {
                     client.ClientCredentials.ClientCertificate.Certificate = x509Certificate2;
                     status = await client.isReachableAsync(senderOrgNr, new string[] { recipientId });
@@ -116,9 +105,9 @@ namespace SE.GOV.MM.Integration.Infrastructure
 
         }
 
-        internal async Task<Sender[]> GetSendersResponse(X509Certificate2 x509Certificate2, string endpointAddress, int timeoutInSeconds=60)
+        internal async Task<Sender[]> GetSendersResponse(X509Certificate2 x509Certificate2, string endpointAddress)
         {
-            var client = new AuthorityPortClient(GetBinding(timeoutInSeconds), GetEndpoint(endpointAddress));
+            var client = new AuthorityPortClient(GetBinding(), GetEndpoint(endpointAddress));
             client.ClientCredentials.ClientCertificate.Certificate = x509Certificate2;
 
             var response =await client.getSendersAsync();
@@ -129,7 +118,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
 
 
 
-        private BasicHttpBinding GetBinding(int timeoutInSeconds)
+        private BasicHttpBinding GetBinding()
         {
             return new BasicHttpBinding()
             {
