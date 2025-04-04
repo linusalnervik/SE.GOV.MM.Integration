@@ -21,6 +21,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
     [TestFixture]
     public class MessageServiceTest
     {
+        // User need to change to new certificate. This one is not supported anymore
         public string certificateUrl { get; } = TestContext.CurrentContext.TestDirectory + "\\Certificates\\KommunA.p12";
         public string certificatePassword { get; } = "4729451359506045";
         public string certificateCN { get; } = "Kommun A";
@@ -30,6 +31,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
         public string endpointAdressRecipient { get; set; } = @"https://notarealhost.skatteverket.se/webservice/acc1accao/Recipient/v3";
 
         [Test]
+        [Explicit]
         public async Task distributeSecure_CertificateFromUrl()
         {
             //Arrange
@@ -45,7 +47,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var result =await messageService.distributeSecure(signedDelivery, endpointAdressRecipient, endpointAdressAuthory,  certificateUrl, certificatePassword);
 
             //Assert
-            Assert.IsTrue(result.Status != null);
+            Assert.That(result.Status != null);
         }
 
         [Test]
@@ -65,10 +67,11 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var result =await messageService.distributeSecure(signedDelivery, endpointAdressRecipient, endpointAdressAuthory, certificateCN);
 
             //Assert
-            Assert.IsTrue(result.Status != null);
+            Assert.That(result.Status != null);
         }
 
         [Test]
+        [Explicit]
         public async Task distributeSecure_CertificateIncluded()
         {
             //Arrange
@@ -88,10 +91,11 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var result =await messageService.distributeSecure(signedDelivery, endpointAdressRecipient, endpointAdressAuthory, x509Certificate2);
 
             //Assert
-            Assert.IsTrue(result.Status != null);
+            Assert.That(result.Status != null);
         }
 
         [Test]
+        [Explicit]
         public async Task distributeSecurePreSigned()
         {
             //Arrange
@@ -107,10 +111,11 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var result = await messageService.distributeSecure(signedDelivery, endpointAdressRecipient, endpointAdressAuthory, certificateUrl, certificatePassword);
 
             //Assert
-            Assert.IsTrue(result.Status != null);
+            Assert.That(result.Status != null);
         }
 
         [Test]
+        [Explicit]
         public async Task getSenders()
         {
             //Arrange
@@ -128,11 +133,12 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
                 Console.WriteLine(x.Attention + " " + x.Id + " " +x.Name);
             });
             //Assert
-            Assert.IsTrue(result.ToList().Count>0);
+            Assert.That(result.ToList().Count>0);
 
         }
 //        19861003T010
         [Test]
+        [Explicit]
         public async Task IsUserReachableInFaRV3()
         {
             //Arrange
@@ -146,10 +152,11 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var result = await messageService.IsUserReachableInFaRV3(recipientId, senderOrgNr, endpointAdressRecipient, certificateUrl, certificatePassword);
 
             //Assert
-            Assert.IsTrue(result.ToList()[0].SenderAccepted);
+            Assert.That(result.ToList()[0].SenderAccepted);
 
         }
         [Test]
+        [Explicit]
         public async Task UserNotReachableInFaRV3()
         {
             //Arrange
@@ -163,7 +170,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var result = await messageService.IsUserReachableInFaRV3(recipientId, senderOrgNr, endpointAdressRecipient, certificateUrl, certificatePassword);
 
             //Assert
-            Assert.IsTrue(!result.ToList()[0].SenderAccepted);
+            Assert.That(!result.ToList()[0].SenderAccepted);
 
         }
 

@@ -1,19 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net7.0;net48</TargetFrameworks>
+    <TargetFramework>net9.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>   
     <PackageId>SE.GOV.MM.Integration.Infrastructure</PackageId>
-    <AssemblyVersion>1.0.15.0</AssemblyVersion>
-    <FileVersion>1.0.15.0</FileVersion>
-    <Version>1.0.15</Version>
+    <AssemblyVersion>1.0.16.0</AssemblyVersion>
+    <FileVersion>1.0.16.0</FileVersion>
+    <Version>1.0.16</Version>
     <PackageProjectUrl>https://www.minameddelanden.se/</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/linusalnervik/SE.GOV.MM.Integration/master/SE.GOV.MM.Integration/mm_logo_org_rgb.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/linusalnervik/SE.GOV.MM.Integration</RepositoryUrl>
     <Copyright>MIT License</Copyright>
     <PackageLicenseFile>Licensing.txt</PackageLicenseFile>
 	<PackageTags>Mina Meddelanden, MM, Relay Service</PackageTags>
-	<PackageReleaseNotes>Version To Release</PackageReleaseNotes>
+	<PackageReleaseNotes>Update to .NET 9, dropping .NET 48 , added timeout on FAR client</PackageReleaseNotes>
     <Authors>MinaMeddelanden</Authors>
 	 <Description>Unofficial project to help create a relay service for Mina Meddelanden (MM).
 This project contains the infrastructure implementation.</Description>
@@ -27,16 +27,17 @@ This project contains the infrastructure implementation.</Description>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Enums.NET" Version="4.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
-    <PackageReference Include="SE.GOV.MM.Integration.Core" Version="1.0.8" />
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="7.0.1" />
-    <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.2" />
-    <PackageReference Include="System.ServiceModel.Http" Version="4.10.2" />
-    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.2" />
-    <PackageReference Include="System.ServiceModel.Primitives" Version="4.10.2" />
-    <PackageReference Include="System.ServiceModel.Security" Version="4.10.2" />
+    <PackageReference Include="Enums.NET" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.3" />
+    <PackageReference Include="SE.GOV.MM.Integration.Core" Version="1.0.9" />
+
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="9.0.3" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="6.0.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="8.1.2" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="8.1.2" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="8.1.2" />
+    <PackageReference Include="System.ServiceModel.Security" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

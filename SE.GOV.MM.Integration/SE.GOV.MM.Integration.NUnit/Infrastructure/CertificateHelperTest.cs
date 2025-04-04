@@ -6,6 +6,7 @@ using NUnit.Framework;
 using SE.GOV.MM.Integration.Infrastructure;
 using System;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SE.GOV.MM.Integration.NUnit.Infrastructure
 {
@@ -32,11 +33,11 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var certificate = certificateHelper.GetXMLSigningCertificateFromUrl(certificateUrl, certificatePassword);
 
             //Assert
-            Assert.IsTrue(certificate.PrivateKey != null);
-            Assert.IsTrue(certificate.PublicKey != null);
+            Assert.That(certificate.GetRSAPrivateKey != null);
+            Assert.That(certificate.PublicKey != null);
         }
 
-        /// <summary>
+        /// <summary>   
         /// To run this test, the "Kommun A.p12" needs to be installed into CertificateStore on local machine
         /// </summary>
         [Test]
@@ -47,8 +48,8 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var certificate = certificateHelper.GetXMLSigningCertificateFromStore(certificateCN);
 
             //Assert
-            Assert.IsTrue(certificate.HasPrivateKey);
-            Assert.IsTrue(certificate.PublicKey != null);
+            Assert.That(certificate.HasPrivateKey);
+            Assert.That(certificate.PublicKey != null);
         }
 
         private static ILogger<CertificateHelper> SetupLogging()

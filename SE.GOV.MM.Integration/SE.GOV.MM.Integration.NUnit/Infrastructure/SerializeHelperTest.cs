@@ -48,8 +48,8 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var response = serializeHelper.DeserializeXmlToSignedDeliveryV3(xmlDocument, defaultNamespace);
 
             //Assert
-            Assert.IsTrue(response!=null);
-            Assert.IsTrue(response.Signature!=null);
+            Assert.That(response!=null);
+            Assert.That(response.Signature!=null);
         }
 
    
@@ -65,8 +65,8 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var response = serializeHelper.DeserializeXmlToSealedDeliveryV3(xmlDocument, defaultNamespace);
 
             //Assert
-            Assert.IsTrue(response != null);
-            Assert.IsTrue(response.Signature != null);
+            Assert.That(response != null);
+            Assert.That(response.Signature != null);
         }
 
         #region Setup

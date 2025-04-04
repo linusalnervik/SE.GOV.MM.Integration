@@ -41,7 +41,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var isValid = await messageService.IsValidSignature(xmlDocument);
 
             //Assert
-            Assert.IsTrue(isValid);
+            Assert.That(isValid);
         }
 
     
