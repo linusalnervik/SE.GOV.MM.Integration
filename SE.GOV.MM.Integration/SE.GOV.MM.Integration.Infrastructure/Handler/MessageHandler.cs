@@ -6,6 +6,7 @@ using SE.GOV.MM.Integration.Core.Model;
 using Service;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -35,15 +36,18 @@ namespace SE.GOV.MM.Integration.Infrastructure
                 var client = new ServicePortv3Client(binding, new EndpointAddress(endpointAdress));
                 client.ClientCredentials.ClientCertificate.Certificate = x509Certificate2;
 
-                logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageHandler: Sending message to MailBoxOperator"));
-                var response= await client.deliverSecureAsync(SealedDelivery);
-                logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageHandler: leaving SendMessageToMailBoxOperator"));
+                logger.LogTrace(string.Format($"SE.GOV.MM.Integration.Infrastructure.MessageHandler: Sending message to MailBoxOperator {endpointAdress}"));
+                var stopWatch = new Stopwatch();
+                stopWatch.Start();
+                var response = await client.deliverSecureAsync(SealedDelivery);
+                stopWatch.Stop();
+                logger.LogTrace(string.Format($"SE.GOV.MM.Integration.Infrastructure.MessageHandler:Time spend sending message {stopWatch.Elapsed.TotalSeconds} seconds.  leaving SendMessageToMailBoxOperator"));
                 return response.@return;
             }
             catch (Exception ce)
             {
                 logger.LogError(ce, ce.Message);
-                throw ce;
+                throw;
             }
         }
 
@@ -76,7 +80,7 @@ namespace SE.GOV.MM.Integration.Infrastructure
                 string errorMessage = string.Format("SE.GOV.MM.Integration.Infrastructure.MessageHandler: SecurityNegotiationException during request to Recipient, Exception: {0}, Trying to check recipient: {1}", se.Message, recipientId);
                 logger.LogError(se, errorMessage);
 
-                throw se;
+                throw;
             }
             catch (TimeoutException te)
             {
@@ -84,21 +88,21 @@ namespace SE.GOV.MM.Integration.Infrastructure
                 logger.LogError(te, errorMessage);
 
 
-                throw te;
+                throw;
             }
             catch (CommunicationException ce)
             {
                 string errorMessage = string.Format("SE.GOV.MM.Integration.Infrastructure.MessageHandler: CommunicationException during request to Recipient, Exception: {0}, Trying to check recipient: {1}.", ce.Message, recipientId);
                 logger.LogError(ce, errorMessage);
 
-                throw ce;
+                throw;
             }
             catch (Exception e)
             {
                 string errorMessage = string.Format("SE.GOV.MM.Integration.Infrastructure.MessageHandler: Exception during request to Recipient, Exception: {0}, Trying to check recipient: {1}.", e, recipientId);
                 logger.LogError(e, errorMessage);
 
-                throw e;
+                throw;
             }
            
          
