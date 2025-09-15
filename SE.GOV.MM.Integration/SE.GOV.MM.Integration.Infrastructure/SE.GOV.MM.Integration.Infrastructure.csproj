@@ -4,16 +4,16 @@
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>   
     <PackageId>SE.GOV.MM.Integration.Infrastructure</PackageId>
-    <AssemblyVersion>1.0.20.</AssemblyVersion>
-    <FileVersion>1.0.20.0</FileVersion>
-    <Version>1.0.20</Version>
+    <AssemblyVersion>1.0.21.</AssemblyVersion>
+    <FileVersion>1.0.21.0</FileVersion>
+    <Version>1.0.21</Version>
     <PackageProjectUrl>https://www.minameddelanden.se/</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/linusalnervik/SE.GOV.MM.Integration/master/SE.GOV.MM.Integration/mm_logo_org_rgb.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/linusalnervik/SE.GOV.MM.Integration</RepositoryUrl>
     <Copyright>MIT License</Copyright>
     <PackageLicenseFile>Licensing.txt</PackageLicenseFile>
 	<PackageTags>Mina Meddelanden, MM, Relay Service</PackageTags>
-	<PackageReleaseNotes>Added debuglog for time spend sending message</PackageReleaseNotes>
+	<PackageReleaseNotes>Added debug log to recipient adress</PackageReleaseNotes>
     <Authors>MinaMeddelanden</Authors>
 	 <Description>Unofficial project to help create a relay service for Mina Meddelanden (MM).
 This project contains the infrastructure implementation.</Description>

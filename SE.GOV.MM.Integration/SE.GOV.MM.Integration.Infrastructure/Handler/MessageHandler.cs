@@ -36,12 +36,11 @@ namespace SE.GOV.MM.Integration.Infrastructure
                 var client = new ServicePortv3Client(binding, new EndpointAddress(endpointAdress));
                 client.ClientCredentials.ClientCertificate.Certificate = x509Certificate2;
 
-                logger.LogDebug(string.Format($"SE.GOV.MM.Integration.Infrastructure.MessageHandler: Sending message to MailBoxOperator {endpointAdress}"));
                 var stopWatch = new Stopwatch();
                 stopWatch.Start();
                 var response = await client.deliverSecureAsync(SealedDelivery);
                 stopWatch.Stop();
-                logger.LogDebug(string.Format($"SE.GOV.MM.Integration.Infrastructure.MessageHandler:Time spend sending message {stopWatch.Elapsed.TotalSeconds} seconds.  leaving SendMessageToMailBoxOperator"));
+                logger.LogDebug(string.Format($"SE.GOV.MM.Integration.Infrastructure.MessageHandler:Time spend sending message {stopWatch.Elapsed.TotalSeconds} seconds to endpoint {endpointAdress} .  leaving SendMessageToMailBoxOperator"));
                 return response.@return;
             }
             catch (Exception ce)
