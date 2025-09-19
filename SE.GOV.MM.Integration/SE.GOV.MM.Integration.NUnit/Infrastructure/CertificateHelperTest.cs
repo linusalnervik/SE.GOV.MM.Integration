@@ -14,7 +14,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
     public class CertificateHelperTest
     {
         public string certificateUrl { get;}= TestContext.CurrentContext.TestDirectory + "\\Certificates\\KommunA.p12";
-        public string certificatePassword { get; } = "4729451359506045";
+        public string certificatePassword { get; } = "4133250695929096";
         public string certificateCN { get; } = "Kommun A";
 
         public CertificateHelper certificateHelper { get; set; }

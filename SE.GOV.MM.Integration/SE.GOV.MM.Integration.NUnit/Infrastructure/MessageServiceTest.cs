@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
     {
         // User need to change to new certificate. This one is not supported anymore
         public string certificateUrl { get; } = TestContext.CurrentContext.TestDirectory + "\\Certificates\\KommunA.p12";
-        public string certificatePassword { get; } = "4729451359506045";
+        public string certificatePassword { get; } = "4133250695929096";
         public string certificateCN { get; } = "Kommun A";
 
         public string endpointAdressAuthory { get; set; } = @"https://notarealhost.skatteverket.se/webservice/acc1accao/Authority";
@@ -37,7 +38,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             //Arrange
             var logger = new Logger<MessageService>(new NullLoggerFactory());
             var xmlDocument = new XmlDocument();
-            xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDelivery.xml");
+            xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDeliveryWithoutSignature.xml");
             string defaultNamespace = DefaultNamespace.v3.AsString(EnumFormat.Description);
             var serializeHelper = new SerializeHelper(logger);
             var signedDelivery = serializeHelper.DeserializeXmlToSignedDeliveryV3(xmlDocument, defaultNamespace);
@@ -57,7 +58,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             //Arrange
             var logger = new Logger<MessageService>(new NullLoggerFactory());
             var xmlDocument = new XmlDocument();
-            xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDelivery.xml");
+            xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDeliveryWithoutSignature.xml");
             string defaultNamespace = DefaultNamespace.v3.AsString(EnumFormat.Description);
             var serializeHelper = new SerializeHelper(logger);
             var signedDelivery = serializeHelper.DeserializeXmlToSignedDeliveryV3(xmlDocument, defaultNamespace);
@@ -79,7 +80,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             var log = new Logger<CertificateHelper>(new NullLoggerFactory());
 
             var xmlDocument = new XmlDocument();
-            xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDelivery.xml");
+            xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDeliveryWithoutSignature.xml");
             string defaultNamespace = DefaultNamespace.v3.AsString(EnumFormat.Description);
             var serializeHelper = new SerializeHelper(logger);
             var signedDelivery = serializeHelper.DeserializeXmlToSignedDeliveryV3(xmlDocument, defaultNamespace);
@@ -101,7 +102,7 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
             //Arrange
             var logger = new Logger<MessageService>(new NullLoggerFactory());
             var xmlDocument = new XmlDocument();
-            xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDeliveryWithoutSignature.xml");
+            xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDeliveryWithSignature.xml");
             string defaultNamespace = DefaultNamespace.v3.AsString(EnumFormat.Description);
             var serializeHelper = new SerializeHelper(logger);
             var signedDelivery = serializeHelper.DeserializeXmlToSignedDeliveryV3(xmlDocument, defaultNamespace);
@@ -109,6 +110,35 @@ namespace SE.GOV.MM.Integration.NUnit.Infrastructure
 
             //Act
             var result = await messageService.distributeSecure(signedDelivery, endpointAdressRecipient, endpointAdressAuthory, certificateUrl, certificatePassword);
+
+            //Assert
+            Assert.That(result.Status != null);
+        }
+
+        [Test]
+        [Explicit]
+        public async Task distributeSecure_PreSendersReciver()
+        {
+            //Arrange
+            var logger = new Logger<MessageService>(new NullLoggerFactory());
+            var xmlDocument = new XmlDocument();
+            xmlDocument.Load(TestContext.CurrentContext.TestDirectory + @"\\TestSets\\SignedDeliveryWithSignature.xml");
+            string defaultNamespace = DefaultNamespace.v3.AsString(EnumFormat.Description);
+            var serializeHelper = new SerializeHelper(logger);
+            var signedDelivery = serializeHelper.DeserializeXmlToSignedDeliveryV3(xmlDocument, defaultNamespace);
+            var messageService = new MessageService(logger);
+            var certificateHelper = new CertificateHelper(logger);
+            var x509Certificate2 = certificateHelper.GetXMLSigningCertificateFromUrl(certificateUrl, certificatePassword);
+            
+            var senders = await messageService.GetSenders(endpointAdressAuthory, x509Certificate2);
+            var isReachable = (await messageService.handleIsUserReachableInFaRV3(
+                signedDelivery.Delivery.Header.Recipient,
+                signedDelivery.Delivery.Header.Sender.Id,
+                endpointAdressRecipient, x509Certificate2)).FirstOrDefault();
+
+
+            //Act
+            var result = await messageService.distributeSecure(signedDelivery, senders,isReachable ,x509Certificate2);
 
             //Assert
             Assert.That(result.Status != null);

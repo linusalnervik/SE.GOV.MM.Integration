@@ -31,9 +31,6 @@
     <None Update="Certificates\KommunA.p12">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestSets\SealedDelivery.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="TestSets\SealedDeliveryWithSignature.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

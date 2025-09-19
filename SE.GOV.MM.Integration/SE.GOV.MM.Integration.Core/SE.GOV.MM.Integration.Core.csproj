@@ -4,9 +4,9 @@
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SE.GOV.MM.Integration.Core</PackageId>
-    <AssemblyVersion>1.0.11.0</AssemblyVersion>
-    <FileVersion>1.0.11.0</FileVersion>
-    <Version>1.0.11</Version>
+    <AssemblyVersion>1.0.12.0</AssemblyVersion>
+    <FileVersion>1.0.12.0</FileVersion>
+    <Version>1.0.12</Version>
     <PackageProjectUrl>https://www.minameddelanden.se/</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/linusalnervik/SE.GOV.MM.Integration/master/SE.GOV.MM.Integration/mm_logo_org_rgb.png</PackageIconUrl>
     <Copyright>MIT License</Copyright>
@@ -16,7 +16,7 @@
 This project contains the core implementation.</Description>
     <PackageLicenseFile>Licensing.txt</PackageLicenseFile>
     <Authors>MinaMeddelanden</Authors>
-    <PackageReleaseNotes>Fixed missing .net8</PackageReleaseNotes>
+    <PackageReleaseNotes>Added new method to interface MessageService</PackageReleaseNotes>
 	<IncludeSymbols>true</IncludeSymbols>
 	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>

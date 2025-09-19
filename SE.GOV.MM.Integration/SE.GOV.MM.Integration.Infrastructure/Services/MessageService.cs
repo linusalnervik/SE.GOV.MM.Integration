@@ -46,9 +46,8 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: entering distributeSecure"));
             try
             {
-                var log = new Logger<CertificateHelper>(new NullLoggerFactory());
-                // Get X509Certificate
-                var certificateHelper = new CertificateHelper(log);
+                 // Get X509Certificate
+                var certificateHelper = new CertificateHelper(logger);
                 var x509Certificate = certificateHelper.GetXMLSigningCertificateFromUrl(certificateUrl, certificatePassword);
 
                 logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: leaving distributeSecure"));
@@ -74,9 +73,8 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: entering distributeSecure"));
             try
             {
-                var log = new Logger<CertificateHelper>(new NullLoggerFactory());
                 // Get X509Certificate
-                var certificateHelper = new CertificateHelper(log);
+                var certificateHelper = new CertificateHelper(logger);
                 var x509Certificate = certificateHelper.GetXMLSigningCertificateFromStore(signingCertificateSubjectName);
 
                 logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: leaving distributeSecure"));
@@ -111,6 +109,36 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
                 }
                 logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: leaving distributeSecure"));
                 return await handleDistributeSecure(SignedDelivery, endpointAdressAuthority, endpointAdressRecipient, x509Certificate2);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, ex.Message);
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Handles sending message to user. This method validates sender and receiver with included properties
+        /// </summary>
+        /// <param name="SignedDelivery">Message to process</param>
+        /// <param name="senders">List of senders</param>
+        /// <param name="isReachable">Reachable status for user</param>
+        /// <param name="x509Certificate2">Certificate to sign with</param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<DeliveryResult> distributeSecure(SignedDelivery SignedDelivery, Sender[] senders, ReachabilityStatus isReachable, X509Certificate2 x509Certificate2)
+        {
+            logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: entering distributeSecure"));
+            try
+            {
+                if (!x509Certificate2.HasPrivateKey)
+                {
+                    var errorMessage = string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService.distributeSecure: No valid certificate, private key missing");
+                    logger.LogError(errorMessage);
+                    throw new Exception(errorMessage);
+                }
+                logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: leaving distributeSecure"));
+                return await handleDistributeSecure(SignedDelivery, x509Certificate2, senders, isReachable);
             }
             catch (Exception ex)
             {
@@ -155,10 +183,9 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
         {
             try
             {
-                var log = new Logger<CertificateHelper>(new NullLoggerFactory());
-
+              
                 // Get X509Certificate
-                var certificateHelper = new CertificateHelper(log);
+                var certificateHelper = new CertificateHelper(logger);
                 var x509Certificate = certificateHelper.GetXMLSigningCertificateFromUrl(certificateUrl, password);
 
                 return await handleIsUserReachableInFaRV3(recipientId, senderOrgNr, endpointAdress, x509Certificate);
@@ -183,10 +210,9 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
 
             try
             {
-                var log = new Logger<CertificateHelper>(new NullLoggerFactory());
-
+               
                 // Get X509Certificate
-                var certificateHelper = new CertificateHelper(log);
+                var certificateHelper = new CertificateHelper(logger);
                 var x509Certificate = certificateHelper.GetXMLSigningCertificateFromStore(signingCertificateSubjectName);
 
                 return await handleIsUserReachableInFaRV3(recipientId, senderOrgNr, endpointAdress, x509Certificate);
@@ -248,7 +274,7 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
         #region private
 
 
-        private async Task<ReachabilityStatus[]> handleIsUserReachableInFaRV3(string recipientId, string senderOrgNr, string endpointAdress, X509Certificate2 x509Certificate)
+        public async Task<ReachabilityStatus[]> handleIsUserReachableInFaRV3(string recipientId, string senderOrgNr, string endpointAdress, X509Certificate2 x509Certificate)
         {
             // Initiate messageHandler
             var messageHandler = new MessageHandler(logger, timeoutInSeconds);
@@ -259,8 +285,21 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
 
             return response.@return;
         }
-
         private async Task<DeliveryResult> handleDistributeSecure(SignedDelivery SignedDelivery, string endpointAdressAuthority, string endpointAdressRecipient, X509Certificate2 x509Certificate)
+        {
+            // Get Sender[]
+            var senders = await GetSenders(endpointAdressAuthority, x509Certificate);
+
+            // Get ReachableStatus
+            var isReachable = (await handleIsUserReachableInFaRV3(
+                SignedDelivery.Delivery.Header.Recipient,
+                SignedDelivery.Delivery.Header.Sender.Id,
+                endpointAdressRecipient, x509Certificate)).FirstOrDefault();
+            return await handleDistributeSecure(SignedDelivery, x509Certificate, senders, isReachable);
+        }
+
+
+        private async Task<DeliveryResult> handleDistributeSecure(SignedDelivery SignedDelivery, X509Certificate2 x509Certificate, Sender[] senders, ReachabilityStatus isReachable)
         {
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: entering handleDistributeSecure"));
 
@@ -268,7 +307,6 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
             var messageHandler = new MessageHandler(logger, timeoutInSeconds);
 
             //Check if valid Sender
-            var senders = await GetSenders(endpointAdressAuthority, x509Certificate);
             if (!senders.Select(x => x.Id).Contains(SignedDelivery.Delivery.Header.Sender.Id))
             {
                 var errorMessage = $"SE.GOV.MM.Integration.Infrastructure.MessageService: not valid SenderId={SignedDelivery.Delivery.Header.Sender.Id} in metod handleDistributeSecure";
@@ -301,19 +339,14 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
             SealedDelivery = serializehelper.DeserializeXmlToSealedDeliveryV3(xmlDocSealedDelivery, defaultNamespace);
 
             // Verify that Receiver is reachable
-            var isReachable = await handleIsUserReachableInFaRV3(
-                SignedDelivery.Delivery.Header.Recipient,
-                SignedDelivery.Delivery.Header.Sender.Id,
-                endpointAdressRecipient, x509Certificate);
-
-            // Send to Operator
-            if (isReachable == null || isReachable.Count() == 0) throw new Exception($"SE.GOV.MM.Integration.Infrastructure.MessageService: Recipient is not reachable {SignedDelivery.Delivery.Header.Recipient}");
-            if (!isReachable[0].SenderAccepted) throw new Exception($"SE.GOV.MM.Integration.Infrastructure.MessageService: Recipient '{SignedDelivery.Delivery.Header.Recipient}' " +
+            if (isReachable == null) throw new Exception($"SE.GOV.MM.Integration.Infrastructure.MessageService: Recipient is not reachable {SignedDelivery.Delivery.Header.Recipient}");
+            if (!isReachable.SenderAccepted) throw new Exception($"SE.GOV.MM.Integration.Infrastructure.MessageService: Recipient '{SignedDelivery.Delivery.Header.Recipient}' " +
                 $"does not accept delivery from supplier '{SignedDelivery.Delivery.Header.Sender.Id}' ");
-            if (isReachable[0]?.AccountStatus?.ServiceSupplier == null && isReachable[0]?.AccountStatus?.ServiceSupplier?.UIAdress == null)
+            if (isReachable?.AccountStatus?.ServiceSupplier == null && isReachable?.AccountStatus?.ServiceSupplier?.UIAdress == null)
                 throw new Exception($"SE.GOV.MM.Integration.Infrastructure.MessageService: Recipient does not have an account in FaR {SignedDelivery.Delivery.Header.Recipient}");
-
-            var baseAdressServiceSupplier = isReachable[0].AccountStatus.ServiceSupplier.ServiceAdress;
+            
+            // Send to Operator
+            var baseAdressServiceSupplier = isReachable.AccountStatus.ServiceSupplier.ServiceAdress;
             logger.LogTrace(string.Format("SE.GOV.MM.Integration.Infrastructure.MessageService: leaving handleDistributeSecure"));
             return await messageHandler.SendMessageToMailBoxOperator(SealedDelivery, x509Certificate, baseAdressServiceSupplier);
         }
@@ -330,6 +363,8 @@ namespace SE.GOV.MM.Integration.Infrastructure.Services
                 }
             };
         }
+
+
         #endregion
     }
 }
