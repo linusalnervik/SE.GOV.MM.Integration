@@ -37,7 +37,7 @@ This project contains the infrastructure implementation.</Description>
 
     
 
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="9.0.15" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="9.0.18" />
     <PackageReference Include="System.ServiceModel.Duplex" Version="6.0.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="8.1.2" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="8.1.2" />
